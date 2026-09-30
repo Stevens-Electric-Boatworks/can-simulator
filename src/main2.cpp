@@ -1,3 +1,4 @@
+#include <iostream>
 #include <lely/ev/loop.hpp>
 #if _WIN32
 #include <lely/io2/win32/ixxat.hpp>
@@ -13,104 +14,187 @@
 #include <lely/io2/sys/timer.hpp>
 #include <lely/coapp/slave.hpp>
 
+// UDP / threading
+#include <thread>
+#include <atomic>
+#include <cstring>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <mutex>
+
 #if _WIN32
 #include <thread>
 #endif
 
 using namespace lely;
 
-class MySlave : public canopen::BasicSlave {
- public:
-  using BasicSlave::BasicSlave;
+// ── UDP configuration ────────────────────────────────────────────────────────
+static constexpr uint16_t UDP_PORT        = 5005;   // must match Simulink's "Remote port"
+static constexpr size_t   UDP_BUF_SIZE    = 256;    // bytes – enlarge if Simulink sends more signals
 
- protected:
-  // This function gets called every time a value is written to the local object
-  // dictionary by an SDO or RPDO.
-  void
-  OnWrite(uint16_t idx, uint8_t subidx) noexcept override {
-    if (idx == 0x4000 && subidx == 0) {
-      // Read the value just written to object 4000:00, probably by RPDO 1.
-      uint32_t val = (*this)[0x4000][0];
-      // Copy it to object 4001:00, so that it will be sent by the next TPDO.
-      (*this)[0x4001][0] = val;
+// ── Object-dictionary placeholder ───────────────────────────────────────────
+// Replace these with your real indices/sub-indices.
+// Simulink typically sends doubles (8 bytes each); adjust the type to match
+// whatever signal type your EDS actually maps.
+static constexpr uint16_t OD_INDEX_1      = 0x2030; // ← replace
+static constexpr uint8_t  OD_SUBINDEX_1   = 3;   // ← replace
+// add more as needed …
+
+
+// ── Slave ────────────────────────────────────────────────────────────────────
+class MySlave : public canopen::BasicSlave
+{
+public:
+    MySlave(lely::io::Timer& timer,
+            lely::io::CanChannel& chan,
+            const std::string& eds,
+            uint8_t node_id)
+        : canopen::BasicSlave(timer, chan, eds, "", node_id)
+    {}
+
+    // Thread-safe helper: write a value into the OD from any thread.
+    // Lely's Write() is NOT thread-safe by itself, so we guard it.
+    template<typename T>
+    void SafeWrite(uint16_t index, uint8_t subindex, T value)
+    {
+        std::lock_guard<std::mutex> lock(od_mutex_);
+        Write(index, subindex, value);
     }
-  }
+
+private:
+    std::mutex od_mutex_;
 };
 
-int
-main() {
-  // Initialize the I/O library. This is required on Windows, but a no-op on
-  // Linux (for now).
-  io::IoGuard io_guard;
-#if _WIN32
-  // Load vcinpl2.dll (or vcinpl.dll if CAN FD is disabled).
-  io::IxxatGuard ixxat_guard;
-#endif
-  // Create an I/O context to synchronize I/O services during shutdown.
-  io::Context ctx;
-  // Create an platform-specific I/O polling instance to monitor the CAN bus, as
-  // well as timers and signals.
-  io::Poll poll(ctx);
-  // Create a polling event loop and pass it the platform-independent polling
-  // interface. If no tasks are pending, the event loop will poll for I/O
-  // events.
-  ev::Loop loop(poll.get_poll());
-  // I/O devices only need access to the executor interface of the event loop.
-  auto exec = loop.get_executor();
-  // Create a timer using a monotonic clock, i.e., a clock that is not affected
-  // by discontinuous jumps in the system time.
-  io::Timer timer(poll, exec, CLOCK_MONOTONIC);
-#if _WIN32
-  // Create an IXXAT CAN controller and channel. The VCI requires us to
-  // explicitly specify the bitrate and restart the controller.
-  io::IxxatController ctrl(0, 0, io::CanBusFlag::NONE, 125000);
-  ctrl.restart();
-  io::IxxatChannel chan(ctx, exec);
-#elif defined(__linux__)
-  // Create a virtual SocketCAN CAN controller and channel, and do not modify
-  // the current CAN bus state or bitrate.
-  io::CanController ctrl("vcan0");
-  io::CanChannel chan(poll, exec);
-#endif
-  chan.open(ctrl);
 
-  // Create a CANopen slave with node-ID 2.
-  MySlave slave(timer, chan, "/home/isayal/motors.eds", "", 6);
+// ── UDP receiver thread ───────────────────────────────────────────────────────
+//
+// Simulink's "UDP Send" block sends a packed binary payload.  By default it
+// uses native double (float64) for every signal.  The layout below assumes:
+//
+//   bytes  0-7  → signal 1  (double)
+//   bytes  8-15 → signal 2  (double)
+//   …
+//
+// Adjust the struct / memcpy section to match your actual Simulink bus layout.
 
-  // Create a signal handler.
-  io::SignalSet sigset(poll, exec);
-  // Watch for Ctrl+C or process termination.
-  sigset.insert(SIGHUP);
-  sigset.insert(SIGINT);
-  sigset.insert(SIGTERM);
+struct SimulinkPacket
+{
+    double signal1;   // ← rename / retype to match your Simulink outport
+};
 
-  // Submit a task to be executed when a signal is raised. We don't care which.
-  sigset.submit_wait([&](int /*signo*/) {
-    // If the signal is raised again, terminate immediately.
-    sigset.clear();
-    // Perform a clean shutdown.
-    ctx.shutdown();
-  });
+void udp_receiver_thread(MySlave& slave, std::atomic<bool>& running)
+{
+    // ── open socket ──────────────────────────────────────────────────────────
+    int sock = ::socket(AF_INET, SOCK_DGRAM, 0);
+    if (sock < 0) {
+        std::perror("UDP socket");
+        return;
+    }
 
-  // Start the NMT service of the slave by pretending to receive a 'reset node'
-  // command.
-  slave.Reset();
+    // Allow rapid restart without "Address already in use"
+    int opt = 1;
+    ::setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
 
-#if _WIN32
-  // Create two worker threads to ensure the blocking canChannelReadMessage()
-  // and canChannelSendMessage() used by the IXXAT CAN channel do not hold up
-  // the event loop.
-  std::thread workers[] = {std::thread([&]() { loop.run(); }),
-                           std::thread([&]() { loop.run(); })};
-#endif
+    // Set a receive timeout so the thread can check `running` periodically
+    struct timeval tv{ .tv_sec = 1, .tv_usec = 0 };
+    ::setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
 
-  // Run the event loop until no tasks remain (or the I/O context is shut down).
-  loop.run();
+    sockaddr_in addr{};
+    addr.sin_family      = AF_INET;
+    addr.sin_addr.s_addr = INADDR_ANY;
+    addr.sin_port        = htons(UDP_PORT);
 
-#if _WIN32
-  // Wait for the worker threads to finish.
-  for (auto& worker : workers) worker.join();
-#endif
+    if (::bind(sock, reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) < 0) {
+        std::perror("UDP bind");
+        ::close(sock);
+        return;
+    }
 
-  return 0;
+    std::printf("[UDP] Listening on port %u\n", UDP_PORT);
+
+    uint8_t buf[UDP_BUF_SIZE];
+
+    while (running.load()) {
+        ssize_t n = ::recv(sock, buf, sizeof(buf), 0);
+
+        if (n < 0) {
+            // EAGAIN / EWOULDBLOCK just means the 1-second timeout fired
+            continue;
+        }
+
+        if (static_cast<size_t>(n) < sizeof(SimulinkPacket)) {
+            std::fprintf(stderr,
+                "[UDP] Short packet: got %zd bytes, expected %zu\n",
+                n, sizeof(SimulinkPacket));
+            continue;
+        }
+
+        // ── Unpack Simulink payload ──────────────────────────────────────
+        SimulinkPacket pkt{};
+        std::memcpy(&pkt, buf, sizeof(pkt));
+
+        std::printf("[UDP] signal1=%.4f  signal2=%.5f\n",
+                    pkt.signal1);
+        slave.SafeWrite<int16_t>(OD_INDEX_1, OD_SUBINDEX_1,
+                                 static_cast<int16_t>(std::abs(pkt.signal1 * 1000)));
+
+
+
+    }
+    ::close(sock);
+    std::printf("[UDP] Receiver thread exiting.\n");
+}
+
+
+int main() {
+    io::Context ctx;
+    io::Poll    poll(ctx);
+    ev::Loop    loop(poll.get_poll());
+    auto            exec = loop.get_executor();
+
+    io::Timer      timer(poll, exec, CLOCK_REALTIME);
+    io::CanController ctrl("vcan0");
+    io::CanChannel    chan(poll, exec);
+    chan.open(ctrl);
+
+    MySlave slave(timer, chan, "/home/isayal/motors.eds", 7);
+
+    // ── Signal handler ───────────────────────────────────────────────────────
+    io::SignalSet sigset(poll, exec);
+    sigset.insert(SIGHUP);
+    sigset.insert(SIGINT);
+    sigset.insert(SIGTERM);
+
+    std::atomic<bool> udp_running{true};
+
+    sigset.submit_wait([&](int /*signo*/)
+    {
+        sigset.clear();
+        udp_running.store(false);   // tell the UDP thread to stop
+        ctx.shutdown();
+    });
+
+    // ── Start UDP thread ─────────────────────────────────────────────────────
+    std::thread udp_thread(udp_receiver_thread,
+                           std::ref(slave),
+                           std::ref(udp_running));
+
+    slave.Reset();
+    slave.Write(0x2030, 3, static_cast<int16_t>(90));
+    slave.Write(0x2030, 2, static_cast<int16_t>(189));
+    slave.Write(0x2040, 3, static_cast<int16_t>(29));
+    slave.Write(0x2071, 2, static_cast<int16_t>(-327));
+
+    std::printf("Node ID : %u\n", slave.id());
+    std::printf("Net ID  : %u\n", slave.netid());
+    std::printf("Test read 0x2030/2 : %d\n", slave.Read<int16_t>(0x2030, 2));
+    std::printf("Test read 0x2040/3 : %d\n", slave.Read<int16_t>(0x2040, 11));
+
+    loop.run();   // blocks until ctx.shutdown()
+
+    udp_running.store(false);
+    udp_thread.join();
+
+    return 0;
 }
