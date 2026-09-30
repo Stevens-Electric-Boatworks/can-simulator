@@ -1,0 +1,29 @@
+master:
+  node_id: 1
+  baudrate: 1000
+  vendor_id: 0x9D1535949594
+  product_code: 0x01
+  revision_number: 0x01
+  serial_number: 0x01
+  heartbeat_multiplier: 3.0
+  heartbeat_consumer: true
+  heartbeat_producer: 0
+  sync_period: 0
+  nmt_inhibit_time: 0
+  boot_time: 0
+
+# slave_6:
+#   dcf: "motors.eds"
+#   node_id: 6
+#   revision_number: 0
+#   serial_number: 0
+#   heartbeat_multiplier: 3.0
+#   heartbeat_producer: 1000
+#   boot: true
+#   mandatory: false
+#   reset_communication: true
+#   software_file: ""
+#   restore_configuration: 0
+
+options:
+  dcf_path: "."

@@ -181,6 +181,7 @@ int main() {
                            std::ref(udp_running));
 
     slave.Reset();
+    slave.Write(0x2030, 3, static_cast<int16_t>(120));
     slave.Write(0x2030, 2, static_cast<int16_t>(670));
     slave.Write(0x2040, 3, static_cast<int16_t>(12));
     slave.Write(0x2071, 2, static_cast<int16_t>(-32767));
