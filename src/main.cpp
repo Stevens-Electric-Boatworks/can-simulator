@@ -188,8 +188,8 @@ int main() {
 
     std::printf("Node ID : %u\n", slave.id());
     std::printf("Net ID  : %u\n", slave.netid());
-    std::printf("Test read 0x2030/2 : %d\n", slave.Read<int16_t>(0x2030, 2));
-    std::printf("Test read 0x2040/3 : %d\n", slave.Read<int16_t>(0x2040, 11));
+    // std::printf("Test read 0x2030/2 : %d\n", slave.Read<int16_t>(0x2030, 2));
+    // std::printf("Test read 0x2040/3 : %d\n", slave.Read<int16_t>(0x2040, 11));
 
     loop.run();   // blocks until ctx.shutdown()
 
