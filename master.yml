@@ -5,25 +5,49 @@ master:
   product_code: 0x01
   revision_number: 0x01
   serial_number: 0x01
-  heartbeat_multiplier: 3.0
-  heartbeat_consumer: true
-  heartbeat_producer: 0
-  sync_period: 0
+  heartbeat_multiplier: 5.0
+  heartbeat_consumer: false
+  heartbeat_producer: true
+  sync_period: 5000
   nmt_inhibit_time: 0
   boot_time: 0
 
-# slave_6:
-#   dcf: "motors.eds"
-#   node_id: 6
-#   revision_number: 0
-#   serial_number: 0
-#   heartbeat_multiplier: 3.0
-#   heartbeat_producer: 1000
-#   boot: true
-#   mandatory: false
-#   reset_communication: true
-#   software_file: ""
-#   restore_configuration: 0
+slave_6:
+  dcf: "motors.eds"
+  node_id: 6
+  revision_number: 0
+  serial_number: 0
+  heartbeat_multiplier: 3.0
+  heartbeat_producer: 1000
+  boot: false
+  mandatory: false
+  reset_communication: false
+  restore_configuration: 0
+  tpdo:
+    1:
+      enabled: true
+      transmission: 0x01
+      mapping:
+        - {index: 0x2030, sub_index: 2}
+        - {index: 0x2030, sub_index: 3}
+slave_7:
+  dcf: "motors.eds"
+  node_id: 7
+  revision_number: 0
+  serial_number: 0
+  heartbeat_multiplier: 3.0
+  heartbeat_producer: 1000
+  boot: false
+  mandatory: false
+  reset_communication: false
+  restore_configuration: 0
+  tpdo:
+    2:
+      enabled: true
+      transmission: 0x01
+      mapping:
+        - {index: 0x2030, sub_index: 2}
+        - {index: 0x2030, sub_index: 3}
 
 options:
   dcf_path: "."

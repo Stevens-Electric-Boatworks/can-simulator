@@ -302,7 +302,6 @@ DefaultValue=0x64
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1017]
 ParameterName=ProducerHeartbeatTime
@@ -313,7 +312,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1200]
 ParameterName=ServerSDO1Parameters
@@ -418,7 +416,6 @@ DefaultValue=0x28
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1301sub3]
 ParameterName=SRVT
@@ -429,7 +426,6 @@ DefaultValue=0x0A
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=ms
 
 [1301sub4]
 ParameterName=TransType
@@ -494,7 +490,6 @@ DefaultValue=0x28
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1302sub3]
 ParameterName=SRVT
@@ -505,7 +500,6 @@ DefaultValue=0x0A
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=ms
 
 [1302sub4]
 ParameterName=TransType
@@ -570,7 +564,6 @@ DefaultValue=0x28
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1303sub3]
 ParameterName=SRVT
@@ -581,7 +574,6 @@ DefaultValue=0x0A
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=ms
 
 [1303sub4]
 ParameterName=TransType
@@ -646,7 +638,6 @@ DefaultValue=0x28
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1304sub3]
 ParameterName=SRVT
@@ -657,7 +648,6 @@ DefaultValue=0x0A
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=ms
 
 [1304sub4]
 ParameterName=TransType
@@ -722,7 +712,6 @@ DefaultValue=0x28
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1321sub3]
 ParameterName=SRVT
@@ -733,7 +722,6 @@ DefaultValue=0x0A
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=ms
 
 [1321sub4]
 ParameterName=TransType
@@ -1180,7 +1168,6 @@ HighLimit=4294967295
 ParameterName=TransTypePDOTx
 ObjectType=0x7
 DataType=0x0005
-DefaultValue=0x01
 AccessType=rw
 PDOMapping=0x0
 LowLimit=1
@@ -1195,7 +1182,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1801]
 ParameterName=TransmitPDO2ComParameters
@@ -1240,7 +1226,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1802]
 ParameterName=TransmitPDO3ComParameters
@@ -1285,7 +1270,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1803]
 ParameterName=TransmitPDO4ComParameters
@@ -1330,11 +1314,10 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [1A00]
 ParameterName=TransmitPDO1MapParameters
-SubNumber=0x3
+SubNumber=0x2
 ObjectType=0x8
 
 [1A00sub0]
@@ -1662,7 +1645,6 @@ DataType=0x0003
 AccessType=rw
 DefaultValue=0x00
 PDOMapping=0x0
-Unit=Rpm
 
 [2000sub3]
 ParameterName=CommandTorque
@@ -1673,8 +1655,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-4335
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2000sub4]
 ParameterName=CommandAcCurrent
@@ -1685,7 +1665,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2000sub5]
 ParameterName=CommandAccelerationChange
@@ -1696,7 +1675,6 @@ DefaultValue=0x0A
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=Rpm/2ms/SpeedChangeFactor (see Description)
 
 [2000sub6]
 ParameterName=CommandDecelerationChange
@@ -1707,7 +1685,6 @@ DefaultValue=0x0A
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=Rpm/2ms/SpeedChangeFactor
 
 [2000sub7]
 ParameterName=AccelerationReductionFactor
@@ -1718,7 +1695,6 @@ DefaultValue=0x80
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=See Description
 
 [2000sub8]
 ParameterName=MaxSpeedInRpmReductionFactor
@@ -1729,7 +1705,6 @@ DefaultValue=0xFF
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=See Description
 
 [2000sub9]
 ParameterName=FootBrakePercentageReductionFactor
@@ -1740,7 +1715,6 @@ DefaultValue=0x64
 PDOMapping=0x0
 LowLimit=0
 HighLimit=100
-Unit=%
 
 [2000subA]
 ParameterName=CommandVoltage
@@ -1751,8 +1725,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2000subC]
 ParameterName=CommandPosition
@@ -1762,8 +1734,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2000subD]
 ParameterName=CommandPosInSteerWheelMode
@@ -1773,8 +1743,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2001]
 ParameterName=ApplicationStatus
@@ -1809,7 +1777,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2001sub4]
 ParameterName=SystemManagerState
@@ -1837,8 +1804,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2002]
 ParameterName=OperationTime
@@ -1863,7 +1828,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=s
 
 [2002sub2]
 ParameterName=TotalTimeHours
@@ -1873,7 +1837,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=h
 
 [2002sub3]
 ParameterName=TotalTimeEnabledSeconds
@@ -1883,7 +1846,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=s
 
 [2002sub4]
 ParameterName=TotalTimeEnabledHours
@@ -1893,7 +1855,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=h
 
 [2002sub5]
 ParameterName=SaveOperatingTimes
@@ -1921,7 +1882,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=See Description
 
 [2002sub8]
 ParameterName=TotalTimeEnabled250ms
@@ -1931,7 +1891,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=See Description
 
 [2005]
 ParameterName=ADConverterValues
@@ -2475,7 +2434,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=Arms
 
 [2009sub4]
 ParameterName=SoftwareName
@@ -2560,7 +2518,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2020subA]
 ParameterName=ApplicationSetupWord
@@ -2579,7 +2536,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=Rpm
 
 [2020subC]
 ParameterName=RequestedControlMode
@@ -2607,8 +2563,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2020subF]
 ParameterName=MinCommandPosition
@@ -2618,8 +2572,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=0
-Factor=0.1
-Unit=Deg
 
 [2020sub10]
 ParameterName=SteerWheelModeThreshold
@@ -2630,7 +2582,6 @@ DefaultValue=0x32
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2029]
 ParameterName=ApplicationParameters
@@ -2666,7 +2617,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2029sub3]
 ParameterName=ThrottleErrorState
@@ -2696,7 +2646,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2029sub6]
 ParameterName=ThrottleSignalPercent
@@ -2707,7 +2656,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=%
 
 [2029sub7]
 ParameterName=ThrottleCommandSpeed
@@ -2766,7 +2714,6 @@ DefaultValue=0x1F4
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2029subD]
 ParameterName=ThrottleActiveHighVoltage_mV
@@ -2777,7 +2724,6 @@ DefaultValue=0x1194
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2029subE]
 ParameterName=ThrottleOORLowVoltage_mV
@@ -2788,7 +2734,6 @@ DefaultValue=0x19
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2029subF]
 ParameterName=ThrottleOORHighVoltage_mV
@@ -2799,7 +2744,6 @@ DefaultValue=0x1356
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2029sub10]
 ParameterName=HighMaxCommandSpeed
@@ -2855,18 +2799,16 @@ DefaultValue=0x7D0
 PDOMapping=0x0
 LowLimit=0
 HighLimit=8000
-Unit=ms
 
 [202Dsub3]
 ParameterName=IdCalibration
 ObjectType=0x7
 DataType=0x0003
 AccessType=rw
-DefaultValue=0x-25
+DefaultValue=0x25
 PDOMapping=0x0
 LowLimit=0
 HighLimit=500
-Unit=ms
 
 [202Dsub4]
 ParameterName=IqCalibration
@@ -2877,7 +2819,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=500
-Unit=ms
 
 [202Dsub5]
 ParameterName=UseNegativeIq
@@ -2908,7 +2849,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [202Dsub8]
 ParameterName=ExternalTorque
@@ -2938,7 +2878,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [202DsubB]
 ParameterName=ContLq
@@ -2949,7 +2888,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [202DsubC]
 ParameterName=TorqueScaleFactor
@@ -2983,8 +2921,6 @@ AccessType=rwr
 PDOMapping=1
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub3]
 ParameterName=MaxMeasuredVoltage
@@ -2994,8 +2930,6 @@ AccessType=rwr
 PDOMapping=1
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub4]
 ParameterName=ModeratelyHighLevel
@@ -3005,8 +2939,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub5]
 ParameterName=HighLevel
@@ -3016,8 +2948,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub6]
 ParameterName=ModeratelyLowLevel
@@ -3027,8 +2957,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub7]
 ParameterName=LowLevel
@@ -3038,8 +2966,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub8]
 ParameterName=ReductionEndHighLevel
@@ -3050,8 +2976,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub9]
 ParameterName=ReductionEndLowLevel
@@ -3062,8 +2986,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030subA]
 ParameterName=FilterGain
@@ -3083,8 +3005,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub10]
 ParameterName=FilteredVoltage
@@ -3094,8 +3014,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub11]
 ParameterName=ChargingLevel
@@ -3105,8 +3023,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub12]
 ParameterName=MaxChargeTime
@@ -3117,7 +3033,6 @@ DefaultValue=0x2710
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [2030sub13]
 ParameterName=DcBusCalValueGain
@@ -3137,7 +3052,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=centiV
 
 [2030sub15]
 ParameterName=SetDcBusCalValuesDefault
@@ -3157,8 +3071,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub17]
 ParameterName=CanSignalFilteredVoltage
@@ -3168,8 +3080,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2030sub18]
 ParameterName=CanSignalFilterGain
@@ -3250,8 +3160,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=V
 
 [2039sub2]
 ParameterName=5V
@@ -3261,8 +3169,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=V
 
 [2039sub3]
 ParameterName=15V
@@ -3272,8 +3178,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=V
 
 [2039sub6]
 ParameterName=SensorSupplyRefVoltage
@@ -3283,8 +3187,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=V
 
 [2039sub7]
 ParameterName=SensorSupplyVoltage
@@ -3294,8 +3196,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=V
 
 [2039sub8]
 ParameterName=SensorSupplyCurrent
@@ -3305,7 +3205,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=mA
 
 [2039sub9]
 ParameterName=SensorSupplyRefGain
@@ -3315,8 +3214,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.001
-Unit=mV/bit
 
 [2039subA]
 ParameterName=SensorSupplyGain
@@ -3326,8 +3223,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.001
-Unit=mV/bit
 
 [2039subB]
 ParameterName=SensorSupplySetGainDefault
@@ -3346,8 +3241,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=V
 
 [2039sub1A]
 ParameterName=SensorSupplyCurrentMin
@@ -3357,7 +3250,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=mA
 
 [2039sub1C]
 ParameterName=SensorSupply1OutputVoltage
@@ -3367,8 +3259,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=V
 
 [2040]
 ParameterName=MotorTemperature
@@ -3393,7 +3283,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-50
 HighLimit=210
-Unit=degC
 
 [2040sub3]
 ParameterName=ModeratelyLowLevel
@@ -3404,7 +3293,6 @@ DefaultValue=-23
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=degC
 
 [2040sub4]
 ParameterName=ReductionEndLowLevel
@@ -3415,7 +3303,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=degC
 
 [2040sub5]
 ParameterName=ModeratelyHighLevel
@@ -3426,7 +3313,6 @@ DefaultValue=0x64
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=degC
 
 [2040sub6]
 ParameterName=ReductionEndHighLevel
@@ -3437,7 +3323,6 @@ DefaultValue=0x78
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=degC
 
 [2040sub7]
 ParameterName=HighLevel
@@ -3448,7 +3333,6 @@ DefaultValue=0x82
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=degC
 
 [2040subA]
 ParameterName=CanSignalMotorTemp
@@ -3458,7 +3342,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-50
 HighLimit=210
-Unit=degC
 
 [2040subB]
 ParameterName=CanSignalMotorTempFilterGain
@@ -3475,11 +3358,10 @@ ParameterName=ShortCircuitLevel
 ObjectType=0x7
 DataType=0x0003
 AccessType=rw
-DefaultValue=0x-32
+DefaultValue=32
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=degC
 
 [2040subE]
 ParameterName=NotConnectedLevel
@@ -3490,7 +3372,6 @@ DefaultValue=0xD2
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=degC
 
 [2040sub10]
 ParameterName=SensorTypeSelect
@@ -3525,7 +3406,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-50
 HighLimit=130
-Unit=degC
 
 [2041sub3]
 ParameterName=CanSignalInverterTemp
@@ -3535,7 +3415,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-50
 HighLimit=130
-Unit=degC
 
 [2041sub4]
 ParameterName=CanSignalInverterTempFilterGain
@@ -3570,7 +3449,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-50
 HighLimit=120
-Unit=degC
 
 [2045]
 ParameterName=MotorTemperatureTableAD
@@ -3619,7 +3497,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-200
 HighLimit=300
-Unit=degC
 
 [2047]
 ParameterName=ActualMotorTemperatureTableAD
@@ -3668,7 +3545,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-200
 HighLimit=300
-Unit=degC
 
 [2050]
 ParameterName=EnergyLimit
@@ -3693,7 +3569,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2050sub2]
 ParameterName=ReductionPgain
@@ -3730,7 +3605,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2051]
 ParameterName=PmFeedbackSensorOffsetCalibration
@@ -3766,7 +3640,6 @@ DefaultValue=0x12C
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2051sub3]
 ParameterName=OpenLoopCurrent
@@ -3777,7 +3650,6 @@ DefaultValue=0x5B
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2051sub4]
 ParameterName=AccAndBrakeCurrent
@@ -3788,7 +3660,6 @@ DefaultValue=0x37
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2051sub5]
 ParameterName=AccelerationTimeout
@@ -3799,7 +3670,6 @@ DefaultValue=0x1388
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [2051sub7]
 ParameterName=MaxUpeak
@@ -3820,8 +3690,6 @@ DefaultValue=0x1E
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2051sub9]
 ParameterName=MaxNumberOfRetries
@@ -3832,7 +3700,6 @@ DefaultValue=0x02
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=no
 
 [2052]
 ParameterName=FeedbackSensor
@@ -3857,7 +3724,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2052sub2]
 ParameterName=SensorAngleAligned
@@ -3867,8 +3733,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2052sub3]
 ParameterName=SensorAngleOffset
@@ -3879,8 +3743,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2052sub4]
 ParameterName=DeltaSensorLowResAngle
@@ -3890,7 +3752,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=incs/timeunit
 
 [2052sub5]
 ParameterName=SensorLowResAngleAligned
@@ -3900,7 +3761,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=incs
 
 [2052sub6]
 ParameterName=DeltaSensorAngle
@@ -3910,7 +3770,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2147483648
 HighLimit=2147483647
-Unit=incs/timeunit
 
 [2052sub7]
 ParameterName=SensorAngleAlignedInternal
@@ -3920,7 +3779,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2147483648
 HighLimit=2147483647
-Unit=incs
 
 [2052sub8]
 ParameterName=Acceleration
@@ -3930,7 +3788,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=incs
 
 [2052sub9]
 ParameterName=SensorPolePairs
@@ -3940,7 +3797,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=1
 HighLimit=32767
-Unit=no
 
 [2052subA]
 ParameterName=FeedbackMode
@@ -3960,7 +3816,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2052subC]
 ParameterName=SensorSpeedInRpm
@@ -3971,7 +3826,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2052subD]
 ParameterName=SpeedFilterGain
@@ -4000,7 +3854,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=incs
 
 [2052sub10]
 ParameterName=SensorAngle
@@ -4010,8 +3863,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2052sub11]
 ParameterName=SpeedCalculationCounter
@@ -4039,7 +3890,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2052sub14]
 ParameterName=CanSignalSpeedFilterGain
@@ -4082,7 +3932,6 @@ DataType=0x0003
 AccessType=ro
 PDOMapping=0x0
 LowLimit=0
-Unit=mV
 
 [2053sub2]
 ParameterName=Sensor2mVSignal
@@ -4091,7 +3940,6 @@ DataType=0x0003
 AccessType=ro
 PDOMapping=0x0
 LowLimit=0
-Unit=mV
 
 [2053sub3]
 ParameterName=Sensor1mVOffsetAdjusted
@@ -4101,7 +3949,6 @@ AccessType=ro
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
-Unit=mV
 
 [2053sub4]
 ParameterName=Sensor2mVOffsetAdjusted
@@ -4111,7 +3958,6 @@ AccessType=ro
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
-Unit=mV
 
 [2053sub5]
 ParameterName=Sensor1mVAmplitudeAdjusted
@@ -4121,7 +3967,6 @@ AccessType=ro
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=1
-Unit=mV
 
 [2053sub6]
 ParameterName=Sensor2mVAmplitudeAdjusted
@@ -4131,7 +3976,6 @@ AccessType=ro
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=1
-Unit=mV
 
 [2053sub16]
 ParameterName=NormaliseSensorInputs
@@ -4151,7 +3995,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2053sub18]
 ParameterName=Sensor2NormalisedSignal
@@ -4162,7 +4005,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2053sub19]
 ParameterName=Sensor1NormalisedOffsetAdjusted
@@ -4213,7 +4055,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2053sub1E]
 ParameterName=Sensor1WindowMax
@@ -4224,7 +4065,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2053sub1F]
 ParameterName=Sensor2WindowMin
@@ -4235,7 +4075,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2053sub20]
 ParameterName=Sensor2WindowMax
@@ -4246,7 +4085,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2053sub21]
 ParameterName=NormalisedSin2Cos2
@@ -4266,7 +4104,6 @@ AccessType=rw
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
-Unit=mV
 
 [2053sub25]
 ParameterName=Sensor2mVOffset
@@ -4276,7 +4113,6 @@ AccessType=rw
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
-Unit=mV
 
 [2053sub26]
 ParameterName=Sensor1mVAmplitude
@@ -4286,7 +4122,6 @@ AccessType=rw
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
-Unit=mV
 
 [2053sub27]
 ParameterName=Sensor2mVAmplitude
@@ -4296,7 +4131,6 @@ AccessType=rw
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
-Unit=mV
 
 [2053sub28]
 ParameterName=ActivateCalibration
@@ -4317,7 +4151,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=250000
-Unit=ns
 
 [2053sub2A]
 ParameterName=Sin2Cos2
@@ -4337,7 +4170,6 @@ AccessType=rw
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=1
-Unit=mV
 
 [2053sub2C]
 ParameterName=MinAmplitude
@@ -4347,7 +4179,6 @@ AccessType=rw
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=1
-Unit=mV
 
 [2053sub2D]
 ParameterName=MaxDeltaNominalOffset
@@ -4357,7 +4188,6 @@ AccessType=rw
 DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
-Unit=mV
 
 [2058]
 ParameterName=SensorBearingFeedback
@@ -4382,7 +4212,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=no
 
 [2058sub2]
 ParameterName=PulseCheckChannelLowSpeedLimit
@@ -4392,7 +4221,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=Rpm
 
 [2058sub4]
 ParameterName=SpeedPlausibleHighLimit
@@ -4402,7 +4230,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=Rpm
 
 [2058sub5]
 ParameterName=HardwareCaptureValue
@@ -4412,7 +4239,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=see Description
 
 [2058sub6]
 ParameterName=CaptureValue
@@ -4422,7 +4248,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=see Description
 
 [2058sub9]
 ParameterName=DeltaCaptureValue
@@ -4591,7 +4416,6 @@ DefaultValue=0x10
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2060sub3]
 ParameterName=OpenDrainOutputControlWord
@@ -4681,7 +4505,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=ms
 
 [2063]
 ParameterName=OpenDrainOutputPullVoltage
@@ -4706,8 +4529,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2064]
 ParameterName=OpenDrainOutputHoldVoltage
@@ -4732,8 +4553,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2065]
 ParameterName=OpenDrainOutputCurrentReference
@@ -4758,7 +4577,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=mA
 
 [2066]
 ParameterName=OpenDrainOutputCurrentPgain
@@ -4834,7 +4652,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=250
-Unit=Hz
 
 [2069]
 ParameterName=OpenDrainOutputDitheringCurrentAmplitude
@@ -4860,7 +4677,6 @@ DefaultValue=0x14
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=mA
 
 [206A]
 ParameterName=OpenDrainOutputCurrent
@@ -4885,7 +4701,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=mA
 
 [206B]
 ParameterName=OpenDrainOutputPWMLevel
@@ -4934,7 +4749,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2500
-Unit=mA
 
 [206D]
 ParameterName=OpenDrainOutputPeakCurrentLevel
@@ -4959,7 +4773,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2500
-Unit=mA
 
 [206E]
 ParameterName=OpenDrainOutputOverloadCurrentLevel
@@ -4984,7 +4797,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1500
-Unit=mA
 
 [206F]
 ParameterName=OpenDrainOutputPullCurrent
@@ -5009,7 +4821,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=mA
 
 [2070]
 ParameterName=PmMotorParameters
@@ -5034,7 +4845,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2070sub2]
 ParameterName=PllIGain
@@ -5044,7 +4854,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2070sub3]
 ParameterName=PllLimOutMax
@@ -5054,7 +4863,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2071]
 ParameterName=InductionMotorParameters
@@ -5079,7 +4887,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2071sub2]
 ParameterName=ZeroSpeedSlipGain
@@ -5089,7 +4896,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2071sub3]
 ParameterName=SpeedVoltageRatio
@@ -5156,7 +4962,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2071subB]
 ParameterName=OpenLoopModulationLevel
@@ -5186,7 +4991,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2071sub13]
 ParameterName=ExpectedSlipSpeed
@@ -5196,7 +5000,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2071sub14]
 ParameterName=LowFrequencyPart
@@ -5206,7 +5009,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2071sub15]
 ParameterName=HighFrequencyPart
@@ -5216,7 +5018,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2071sub16]
 ParameterName=MaxAcceptableTimeWithSlipInWrongDirection
@@ -5227,7 +5028,6 @@ DefaultValue=0x64
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2071sub17]
 ParameterName=SlipSpeedInWrongDirectionCheckLevel
@@ -5238,7 +5038,6 @@ DefaultValue=0x1E
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2071sub18]
 ParameterName=TimeWithSlipInWrongDirection
@@ -5248,7 +5047,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2071sub19]
 ParameterName=SlipSpeedHigh
@@ -5279,7 +5077,6 @@ DefaultValue=0x04
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2071sub1C]
 ParameterName=LongestTimeWithTooHighZeroSpeedSlip
@@ -5300,7 +5097,6 @@ DefaultValue=0x32
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2072]
 ParameterName=CurrentController
@@ -5325,7 +5121,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2072sub6]
 ParameterName=IgainDpart_CurrentController
@@ -5335,7 +5130,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2072sub7]
 ParameterName=PgainQpart_CurrentController
@@ -5345,7 +5139,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2072sub8]
 ParameterName=IgainQpart_CurrentController
@@ -5355,7 +5148,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2072subA]
 ParameterName=RegdIpart
@@ -5366,7 +5158,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2072subB]
 ParameterName=RegqIpart
@@ -5377,7 +5168,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2072subC]
 ParameterName=MaxIdRefChange
@@ -5387,7 +5177,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1000
-Unit=dApeak/250us
 
 [2072subD]
 ParameterName=MaxIqRefChange
@@ -5397,7 +5186,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1000
-Unit=dApeak/250us
 
 [2072subE]
 ParameterName=CrossCouplingMode
@@ -5431,7 +5219,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2073sub2]
 ParameterName=DcBusCurrent
@@ -5441,7 +5228,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3325
 HighLimit=3325
-Unit=Adc
 
 [2073sub3]
 ParameterName=DcBusPower
@@ -5451,8 +5237,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-13621
 HighLimit=13620
-Factor=10
-Unit=W
 
 [2073sub4]
 ParameterName=FluxFilterShiftSteps
@@ -5463,7 +5247,6 @@ DefaultValue=0x04
 PDOMapping=0x0
 LowLimit=0
 HighLimit=15
-Unit=see Description
 
 [2073sub5]
 ParameterName=UPeak
@@ -5473,7 +5256,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub6]
 ParameterName=Rmotor
@@ -5483,8 +5265,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=21649
-Factor=100
-Unit=uOhm
 
 [2073sub7]
 ParameterName=Ld
@@ -5494,7 +5274,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2073sub8]
 ParameterName=Lq
@@ -5504,7 +5283,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2073sub9]
 ParameterName=RotorFluxCalc
@@ -5515,8 +5293,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1763
-Factor=0.1
-Unit=mVs
 
 [2073subA]
 ParameterName=Ed
@@ -5527,7 +5303,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073subB]
 ParameterName=RmsCurrentFilterShiftSteps
@@ -5538,7 +5313,6 @@ DefaultValue=0x02
 PDOMapping=0x0
 LowLimit=0
 HighLimit=15
-Unit=see Description
 
 [2073subC]
 ParameterName=DcBusPowerFilterShiftSteps
@@ -5549,7 +5323,6 @@ DefaultValue=0x02
 PDOMapping=0x0
 LowLimit=0
 HighLimit=15
-Unit=see Description
 
 [2073subD]
 ParameterName=Ldq
@@ -5559,7 +5332,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2073subE]
 ParameterName=wIqLd
@@ -5570,7 +5342,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073subF]
 ParameterName=RmotorTempComp
@@ -5580,8 +5351,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=21649
-Factor=100
-Unit=uOhm
 
 [2073sub10]
 ParameterName=AutoTuneState
@@ -5591,7 +5360,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=see Description
 
 [2073sub11]
 ParameterName=VoltageStep
@@ -5601,7 +5369,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub12]
 ParameterName=TransRecTrigStart
@@ -5611,7 +5378,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub13]
 ParameterName=TunedResistance
@@ -5621,8 +5387,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=21649
-Factor=100
-Unit=uOhm
 
 [2073sub14]
 ParameterName=TunedInductance
@@ -5632,7 +5396,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2073sub15]
 ParameterName=InstantInductance
@@ -5651,7 +5414,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2073sub17]
 ParameterName=TunedInductanceInternalScaling
@@ -5661,7 +5423,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2073sub18]
 ParameterName=UnfilteredDcBusCurrent
@@ -5671,7 +5432,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3325
 HighLimit=3325
-Unit=Adc
 
 [2073sub1A]
 ParameterName=SaturationIndicator
@@ -5681,7 +5441,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub1D]
 ParameterName=StatorResistance
@@ -5691,8 +5450,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=21649
-Factor=100
-Unit=uOhm
 
 [2073sub1E]
 ParameterName=RampVoltageSlope
@@ -5702,7 +5459,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub1F]
 ParameterName=Eq
@@ -5713,7 +5469,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub20]
 ParameterName=DrivingVoltage
@@ -5723,7 +5478,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub24]
 ParameterName=AutoTuneCurrentGradient
@@ -5742,7 +5496,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2147483648
 HighLimit=2147483647
-Unit=see Description
 
 [2073sub26]
 ParameterName=NormDcBusEnergy
@@ -5752,7 +5505,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2147483648
 HighLimit=2147483647
-Unit=see Description
 
 [2073sub27]
 ParameterName=DcBusEnergyLowSpeed
@@ -5762,7 +5514,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub28]
 ParameterName=DcBusEnergyHighSpeed
@@ -5772,7 +5523,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub29]
 ParameterName=DcBusEnergyTimer
@@ -5782,7 +5532,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-2147483648
 HighLimit=2147483647
-Unit=see Description
 
 [2073sub2A]
 ParameterName=TurnPointLowSpeed
@@ -5792,7 +5541,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub2B]
 ParameterName=DcBusEnergyPerCycle
@@ -5802,7 +5550,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub2C]
 ParameterName=CycleTime
@@ -5812,7 +5559,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub2D]
 ParameterName=EdSlipSpeedMaxRipple
@@ -5822,7 +5568,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub2E]
 ParameterName=CurrentAngleGainChangeStep
@@ -5832,7 +5577,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub2F]
 ParameterName=CurrentAngleGainAndDcBusEnergyPerCycle
@@ -5842,7 +5586,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2147483648
 HighLimit=2147483647
-Unit=see Description
 
 [2073sub30]
 ParameterName=CurrentAngleGainAndCycleTime
@@ -5852,7 +5595,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2147483648
 HighLimit=2147483647
-Unit=see Description
 
 [2073sub31]
 ParameterName=MaxSlipSpeedAndZeroSpeedSlipGain
@@ -5862,7 +5604,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2147483648
 HighLimit=2147483647
-Unit=see Description
 
 [2073sub32]
 ParameterName=TurnPointHighSpeed
@@ -5872,7 +5613,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2073sub33]
 ParameterName=EdFilterShiftSteps
@@ -5883,7 +5623,6 @@ DefaultValue=0x02
 PDOMapping=0x0
 LowLimit=0
 HighLimit=15
-Unit=see Description
 
 [2073sub34]
 ParameterName=InductanceTableMaxCurrent
@@ -5893,7 +5632,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2073sub35]
 ParameterName=MinDeltaStatorAngleForFluxCalc
@@ -5903,7 +5641,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2073sub36]
 ParameterName=CanSignalDcCurrentFilterGain
@@ -5933,7 +5670,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2073sub39]
 ParameterName=OverCurrentLimit
@@ -5943,7 +5679,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2073sub3A]
 ParameterName=OverCurrentSampleLimit
@@ -5963,7 +5698,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3276
-Unit=Apk
 
 [2073sub3C]
 ParameterName=UseTableForInductances
@@ -5983,8 +5717,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1764
 HighLimit=1763
-Factor=0.1
-Unit=mVs
 
 [2073sub3E]
 ParameterName=ActualQFlux
@@ -5994,8 +5726,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1764
 HighLimit=1763
-Factor=0.1
-Unit=mVs
 
 [2073sub3F]
 ParameterName=FreezeRotorFluxAtLowSpeed
@@ -6030,7 +5760,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub8]
 ParameterName=DeadBandCompensationTime
@@ -6041,7 +5770,6 @@ DefaultValue=0x3E8
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=ns
 
 [2074sub9]
 ParameterName=AdjustedDeadBandCompTime
@@ -6052,7 +5780,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=ns
 
 [2074subA]
 ParameterName=EnableDoubleFlank
@@ -6073,7 +5800,6 @@ DefaultValue=0xB4
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2074subE]
 ParameterName=MotorCurrentMidLevel
@@ -6084,7 +5810,6 @@ DefaultValue=0xDC
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2074subF]
 ParameterName=MotorCurrentHighLevel
@@ -6095,7 +5820,6 @@ DefaultValue=0x118
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2074sub10]
 ParameterName=MotorCurrentHysteresisLevel
@@ -6106,7 +5830,6 @@ DefaultValue=0x0A
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2074sub11]
 ParameterName=ElecFreqLowLevel
@@ -6117,8 +5840,6 @@ DefaultValue=0x78
 PDOMapping=0x0
 LowLimit=0
 HighLimit=19999
-Factor=0.1
-Unit=Hz
 
 [2074sub12]
 ParameterName=ElecFreqMidLevel
@@ -6129,8 +5850,6 @@ DefaultValue=0xFA
 PDOMapping=0x0
 LowLimit=0
 HighLimit=19999
-Factor=0.1
-Unit=Hz
 
 [2074sub13]
 ParameterName=ElecFreqHighLevel
@@ -6141,8 +5860,6 @@ DefaultValue=0x3E8
 PDOMapping=0x0
 LowLimit=0
 HighLimit=19999
-Factor=0.1
-Unit=Hz
 
 [2074sub14]
 ParameterName=ElecFreqHysteresisLevel
@@ -6153,8 +5870,6 @@ DefaultValue=0x28
 PDOMapping=0x0
 LowLimit=0
 HighLimit=19999
-Factor=0.1
-Unit=Hz
 
 [2074sub15]
 ParameterName=ActualPwmFrequencyZone
@@ -6164,7 +5879,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=33
-Unit=kHz
 
 [2074sub17]
 ParameterName=PwmFrequencyInZone00
@@ -6175,7 +5889,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub18]
 ParameterName=PwmFrequencyInZone01
@@ -6186,7 +5899,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub19]
 ParameterName=PwmFrequencyInZone02
@@ -6197,7 +5909,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub1A]
 ParameterName=PwmFrequencyInZone03
@@ -6208,7 +5919,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub1B]
 ParameterName=PwmFrequencyInZone10
@@ -6219,7 +5929,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub1C]
 ParameterName=PwmFrequencyInZone11
@@ -6230,7 +5939,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub1D]
 ParameterName=PwmFrequencyInZone12
@@ -6241,7 +5949,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub1E]
 ParameterName=PwmFrequencyInZone13
@@ -6252,7 +5959,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub1F]
 ParameterName=PwmFrequencyInZone20
@@ -6263,7 +5969,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub20]
 ParameterName=PwmFrequencyInZone21
@@ -6274,7 +5979,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub21]
 ParameterName=PwmFrequencyInZone22
@@ -6285,7 +5989,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub22]
 ParameterName=PwmFrequencyInZone23
@@ -6296,7 +5999,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub23]
 ParameterName=PwmFrequencyInZone30
@@ -6307,7 +6009,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub24]
 ParameterName=PwmFrequencyInZone31
@@ -6318,7 +6019,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub25]
 ParameterName=PwmFrequencyInZone32
@@ -6329,7 +6029,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2074sub26]
 ParameterName=PwmFrequencyInZone33
@@ -6340,7 +6039,6 @@ DefaultValue=0x08
 PDOMapping=0x0
 LowLimit=1
 HighLimit=16
-Unit=kHz
 
 [2075]
 ParameterName=FieldWeakeningControl
@@ -6365,8 +6063,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-4335
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2075sub2]
 ParameterName=RegulatorStatus
@@ -6385,8 +6081,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-4335
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2075sub4]
 ParameterName=IgainVoltageAngle
@@ -6405,8 +6099,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2075sub8]
 ParameterName=VoltageAngleIPart
@@ -6416,7 +6108,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2075sub9]
 ParameterName=PgainVoltageAngle
@@ -6426,7 +6117,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2075subA]
 ParameterName=VoltageAnglePPart
@@ -6437,8 +6127,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2075subB]
 ParameterName=MaxVoltageAngle
@@ -6448,8 +6136,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2075subD]
 ParameterName=UpeakInFieldWeakening
@@ -6502,8 +6188,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-4335
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2076sub2]
 ParameterName=ActTorque
@@ -6513,8 +6197,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-4335
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2076sub3]
 ParameterName=NominalRotorFlux
@@ -6524,8 +6206,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1763
-Factor=0.1
-Unit=mVs
 
 [2076sub4]
 ParameterName=MoreRefTorqueFactor
@@ -6535,7 +6215,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2076sub7]
 ParameterName=TorqueFilterShiftSteps
@@ -6545,7 +6224,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=15
-Unit=see Description
 
 [2076sub8]
 ParameterName=CanSignalActTorque
@@ -6555,8 +6233,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-4335
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2076sub9]
 ParameterName=CanSignalTorqueFilterGain
@@ -6576,7 +6252,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2
-Unit=see Description
 
 [2076sub15]
 ParameterName=DFlux2DTableValue
@@ -6586,8 +6261,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1764
 HighLimit=1763
-Factor=0.1
-Unit=mVs
 
 [2076sub16]
 ParameterName=QFlux2DTableValue
@@ -6597,8 +6270,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1764
 HighLimit=1763
-Factor=0.1
-Unit=mVs
 
 [2076sub17]
 ParameterName=IdFor2DTableFlux
@@ -6608,7 +6279,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [2076sub18]
 ParameterName=IqFor2DTableFlux
@@ -6618,7 +6288,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [2076sub19]
 ParameterName=IdFor2DTableFluxFilterShiftSteps
@@ -6629,7 +6298,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=15
-Unit=see Description
 
 [2076sub1A]
 ParameterName=IqFor2DTableFluxFilterShiftSteps
@@ -6640,7 +6308,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=15
-Unit=see Description
 
 [2076sub1B]
 ParameterName=UseDQfluxTableInFieldWeakening
@@ -6651,7 +6318,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1
-Unit=see Description
 
 [2077]
 ParameterName=ActualCurrents
@@ -6676,7 +6342,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [2077sub2]
 ParameterName=Id
@@ -6686,7 +6351,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [2077sub5]
 ParameterName=ActualCurrentAngle
@@ -6696,8 +6360,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2077sub6]
 ParameterName=CurrentAngleFilterShiftSteps
@@ -6731,7 +6393,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [2078sub2]
 ParameterName=IqRef
@@ -6741,7 +6402,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [2078sub3]
 ParameterName=CurrentAngleOffset
@@ -6751,8 +6411,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2078sub4]
 ParameterName=CurrentAngleGain
@@ -6762,7 +6420,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2078sub5]
 ParameterName=MaxCurrentAngle
@@ -6772,8 +6429,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2078sub8]
 ParameterName=IdRefMinimum
@@ -6783,7 +6438,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2078sub9]
 ParameterName=RotorFluxMinimum
@@ -6793,8 +6447,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1763
-Factor=0.1
-Unit=mVs
 
 [2078subA]
 ParameterName=ReferenceCurrentAngle
@@ -6804,8 +6456,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2078subB]
 ParameterName=ExternalIdRef
@@ -6815,7 +6465,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2078subC]
 ParameterName=ExternalIqRef
@@ -6825,7 +6474,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2078subD]
 ParameterName=ExternalIdRefActive
@@ -6888,7 +6536,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2079sub2]
 ParameterName=UdReference
@@ -6899,7 +6546,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2079sub3]
 ParameterName=UxRefMax
@@ -6910,7 +6556,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2079sub4]
 ParameterName=DisableCurrentControl
@@ -6939,7 +6584,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2079sub7]
 ParameterName=IdLimitOffset
@@ -6949,7 +6593,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2079sub8]
 ParameterName=UPeakLimit
@@ -6959,7 +6602,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2079sub9]
 ParameterName=UPeakNormalized
@@ -6969,7 +6611,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2079subA]
 ParameterName=InFieldWeakeningMode
@@ -6989,7 +6630,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2079subC]
 ParameterName=UdRefFiltered
@@ -7000,7 +6640,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2079subD]
 ParameterName=UdUqFilterShiftSteps
@@ -7010,7 +6649,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=15
-Unit=see Description
 
 [2079subE]
 ParameterName=ActualVoltageAngle
@@ -7020,8 +6658,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2079subF]
 ParameterName=IdLimit
@@ -7032,7 +6668,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=see Description
 
 [2079sub10]
 ParameterName=UPeakNormalizedFilterShiftSteps
@@ -7042,7 +6677,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=15
-Unit=see Description
 
 [2079sub11]
 ParameterName=ActualVoltageAngleFilterShiftSteps
@@ -7052,7 +6686,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=15
-Unit=see Description
 
 [2079sub12]
 ParameterName=IdFiltered
@@ -7062,7 +6695,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2079sub13]
 ParameterName=IdFilterShiftSteps
@@ -7102,7 +6734,6 @@ DefaultValue=0x05
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2079sub17]
 ParameterName=IqLimit
@@ -7113,7 +6744,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=see Description
 
 [2079sub18]
 ParameterName=IqFiltered
@@ -7123,7 +6753,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2079sub19]
 ParameterName=IqFilterShiftSteps
@@ -7164,7 +6793,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [207B]
 ParameterName=CurrentAngleInterpolationOutput
@@ -7186,8 +6814,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [207C]
 ParameterName=DFluxInterpolationInput
@@ -7209,7 +6835,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [207D]
 ParameterName=DFluxInterpolationOutput
@@ -7231,8 +6856,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1764
 HighLimit=1763
-Factor=0.1
-Unit=mVs
 
 [207E]
 ParameterName=QFluxInterpolationInput
@@ -7254,7 +6877,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [207F]
 ParameterName=QFluxInterpolationOutput
@@ -7276,8 +6898,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1764
 HighLimit=1763
-Factor=0.1
-Unit=mVs
 
 [2080]
 ParameterName=FluxModificationCurrent
@@ -7302,7 +6922,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2081]
 ParameterName=FluxModificationFactor
@@ -7351,7 +6970,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [2082sub2]
 ParameterName=MeasuredCurrentPhaseV
@@ -7361,7 +6979,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [2082sub3]
 ParameterName=MeasuredCurrentPhaseW
@@ -7371,7 +6988,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [2082sub4]
 ParameterName=MotorConnectionState
@@ -7406,7 +7022,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1
-Unit=enum
 
 [2083sub2]
 ParameterName=RotorFluxCoefficientState
@@ -7416,7 +7031,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=enum
 
 [2083sub3]
 ParameterName=RotorFluxTemperatureCoefficient
@@ -7426,7 +7040,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4000
-Unit=m%/degC
 
 [2085]
 ParameterName=TorqueReferenceManager
@@ -7451,7 +7064,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2085sub2]
 ParameterName=IsCurrentLimited
@@ -7468,7 +7080,6 @@ ObjectType=0x7
 DataType=0x0004
 AccessType=ro
 PDOMapping=0x0
-Unit=see Description
 
 [208A]
 ParameterName=GeneralMotorParameters
@@ -7493,7 +7104,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=2
 HighLimit=64
-Unit=no
 
 [208Asub2]
 ParameterName=StatorAngle16
@@ -7503,7 +7113,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [208Asub3]
 ParameterName=DeltaStatorAngle16
@@ -7513,7 +7122,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [208F]
 ParameterName=SpeedRegulatorDgain
@@ -7562,7 +7170,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=deciApk/Rpm/256
 
 [2091]
 ParameterName=SpeedRegulatorIgainSmall
@@ -7587,7 +7194,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=deciApk/Rpm/2 ms/256
 
 [2092]
 ParameterName=SpeedRegulatorIgainMedium
@@ -7612,7 +7218,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=deciApk/Rpm/2 ms/256
 
 [2093]
 ParameterName=SpeedRegulatorIgainLarge
@@ -7637,7 +7242,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=deciApk/Rpm/2 ms/256
 
 [2094]
 ParameterName=DcPowerLimit
@@ -7662,8 +7266,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=13620
-Factor=10
-Unit=W
 
 [2094sub2]
 ParameterName=NegDcPowerLimit
@@ -7673,8 +7275,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=13620
-Factor=10
-Unit=W
 
 [2094sub3]
 ParameterName=PosDcCurrentLimit
@@ -7684,7 +7284,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3325
-Unit=Adc
 
 [2094sub4]
 ParameterName=NegDcCurrentLimit
@@ -7694,7 +7293,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3325
-Unit=Adc
 
 [2094sub5]
 ParameterName=PowerFilterGain
@@ -7724,7 +7322,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2094sub8]
 ParameterName=BrakeCurrentLimitFromDcPowerOrDcCurrentLimit
@@ -7734,7 +7331,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2094sub9]
 ParameterName=CalculatedTorque
@@ -7753,7 +7349,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2094subB]
 ParameterName=BrakeCurrentLimitDueToDcPowerLimit
@@ -7763,7 +7358,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2094subC]
 ParameterName=AccCurrentLimitDueToDcCurrentLimit
@@ -7773,7 +7367,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2094subD]
 ParameterName=BrakeCurrentLimitDueToDcCurrentLimit
@@ -7783,7 +7376,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095]
 ParameterName=CurrentLimit
@@ -7808,7 +7400,6 @@ AccessType=wo
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub2]
 ParameterName=MaxBrakeCurrent
@@ -7818,7 +7409,6 @@ AccessType=wo
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub3]
 ParameterName=MaxCurrentChange
@@ -7828,7 +7418,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1000
-Unit=deciArms / ms
 
 [2095sub5]
 ParameterName=ForwardMaxAccCurrent
@@ -7838,7 +7427,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub6]
 ParameterName=ReverseMaxAccCurrent
@@ -7848,7 +7436,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub7]
 ParameterName=ForwardMaxBrakeCurrent
@@ -7858,7 +7445,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub8]
 ParameterName=ReverseMaxBrakeCurrent
@@ -7868,7 +7454,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub9]
 ParameterName=AbilityAccelerationCurrent
@@ -7878,7 +7463,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095subA]
 ParameterName=AbilityBrakeCurrent
@@ -7888,7 +7472,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095subB]
 ParameterName=ModeratelyHighSpeedStartLevel
@@ -7899,7 +7482,6 @@ DefaultValue=0x1388
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2095subC]
 ParameterName=ModeratelyHighSpeedEndLevel
@@ -7910,7 +7492,6 @@ DefaultValue=0x1482
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2095subD]
 ParameterName=ModeratelyLowSpeedStartLevel
@@ -7921,7 +7502,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2095subE]
 ParameterName=ModeratelyLowSpeedEndLevel
@@ -7932,7 +7512,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2095subF]
 ParameterName=AccCurrentLimit
@@ -7942,7 +7521,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub10]
 ParameterName=BrakeCurrentLimit
@@ -7952,7 +7530,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub13]
 ParameterName=ActualLimitationType
@@ -7989,7 +7566,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub17]
 ParameterName=LimitNegCurrent
@@ -7999,7 +7575,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=0
-Unit=Arms
 
 [2095sub18]
 ParameterName=MaxIncTorqueChange
@@ -8009,7 +7584,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1000000
-Unit=Nm/s
 
 [2095sub19]
 ParameterName=MaxDecTorqueChange
@@ -8019,7 +7593,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1000000
-Unit=Nm/s
 
 [2095sub1A]
 ParameterName=MaxTorqueChangeAtLowTorque
@@ -8029,7 +7602,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1000000
-Unit=Nm/s
 
 [2095sub1B]
 ParameterName=LowTorqueLevel
@@ -8039,8 +7611,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2095sub1E]
 ParameterName=MaxCurrentAt1kHz
@@ -8050,7 +7620,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub1F]
 ParameterName=MaxCurrentAt2kHz
@@ -8060,7 +7629,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub20]
 ParameterName=MaxCurrentAt4kHz
@@ -8070,7 +7638,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub21]
 ParameterName=MaxCurrentAt6kHz
@@ -8080,7 +7647,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub22]
 ParameterName=MaxCurrentAt8kHz
@@ -8090,7 +7656,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub23]
 ParameterName=MaxCurrentAt12kHz
@@ -8100,7 +7665,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub24]
 ParameterName=MaxCurrentAt16kHz
@@ -8110,7 +7674,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2095sub25]
 ParameterName=MaxCurrentAt20kHz
@@ -8120,7 +7683,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2096]
 ParameterName=SpeedRegulatorInternalVariables
@@ -8145,7 +7707,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2096sub2]
 ParameterName=CurrentReference
@@ -8155,7 +7716,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2096sub3]
 ParameterName=SpeedRegIPart
@@ -8165,7 +7725,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2096sub4]
 ParameterName=SpeedRegDPart
@@ -8175,7 +7734,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2096sub5]
 ParameterName=SpeedRegDPartFilterFactor
@@ -8237,7 +7795,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1500
-Unit=see Description
 
 [2097sub2]
 ParameterName=CurrentBoostTime
@@ -8247,7 +7804,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1500
-Unit=see Description
 
 [2097sub3]
 ParameterName=CurrentBoostFactor
@@ -8257,7 +7813,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=1229
-Unit=see Description
 
 [2097sub4]
 ParameterName=CurrentBoostSpeedLimit
@@ -8267,7 +7822,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2098]
 ParameterName=SpeedRamp
@@ -8301,7 +7855,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=100
-Unit=see Description
 
 [2098sub3]
 ParameterName=AntiClonkNumberOfCounts
@@ -8311,7 +7864,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=no
 
 [2098sub4]
 ParameterName=AntiClonkDeltaSpeedLimit
@@ -8321,7 +7873,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2098sub5]
 ParameterName=AntiClonkCommandSpeedLimit
@@ -8331,7 +7882,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2098sub6]
 ParameterName=ReverseBrakeMaxSpeedInRpm
@@ -8341,7 +7891,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2098sub7]
 ParameterName=RampedRollBackSpeed
@@ -8351,7 +7900,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2098sub8]
 ParameterName=PushSpeedLimit
@@ -8361,7 +7909,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2098sub9]
 ParameterName=IGainMode
@@ -8381,7 +7928,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm/20ms
 
 [2098subB]
 ParameterName=ForcePumpBehavior
@@ -8425,7 +7971,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2099sub3]
 ParameterName=BrakeCurrentLimitFromBrakeTorqueLimit
@@ -8435,7 +7980,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2099sub6]
 ParameterName=AccTorqueLimit
@@ -8445,8 +7989,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2099sub7]
 ParameterName=BrakeTorqueLimit
@@ -8456,8 +7998,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2099sub8]
 ParameterName=MissingCommandTorque
@@ -8467,8 +8007,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-4335
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2099sub9]
 ParameterName=MissingAccTorqueLimit
@@ -8478,8 +8016,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-4335
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2099subA]
 ParameterName=MissingBrakeTorqueLimit
@@ -8489,8 +8025,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-4335
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2099subB]
 ParameterName=TorqueToCurrentConversionFactor
@@ -8500,7 +8034,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2147483647
-Unit=Arms/Nm * 1024
 
 [2099subC]
 ParameterName=FeedForwardTorque
@@ -8511,8 +8044,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-4335
 HighLimit=4335
-Factor=0.1
-Unit=Nm
 
 [2099subD]
 ParameterName=FeedForwardCurrent
@@ -8522,7 +8053,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2100]
 ParameterName=ParameterRampForwardAcceleration
@@ -8547,7 +8077,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=Rpm/2ms/SpeedChangeFactor (see Description)
 
 [2101]
 ParameterName=ParameterRampForwardDeceleration
@@ -8572,7 +8101,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=Rpm/2ms/SpeedChangeFactor (see Description)
 
 [2102]
 ParameterName=ParameterRampReverseAcceleration
@@ -8597,7 +8125,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=Rpm/2ms/SpeedChangeFactor (see Description)
 
 [2103]
 ParameterName=ParameterRampReverseDeceleration
@@ -8622,7 +8149,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=Rpm/2ms/SpeedChangeFactor (see Description)
 
 [2104]
 ParameterName=ParameterRampSpecialForwardDeceleration
@@ -8647,7 +8173,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=Rpm/2ms/SpeedChangeFactor (see Description)
 
 [2105]
 ParameterName=ParameterRampSpecialReverseDeceleration
@@ -8672,7 +8197,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=Rpm/2ms/SpeedChangeFactor (see Description)
 
 [2110]
 ParameterName=Lq_Id1
@@ -8697,7 +8221,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2111]
 ParameterName=Lq_Id2
@@ -8722,7 +8245,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2112]
 ParameterName=Lq_Id3
@@ -8747,7 +8269,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2113]
 ParameterName=Lq_Id4
@@ -8772,7 +8293,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2114]
 ParameterName=Lq_Id5
@@ -8797,7 +8317,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2115]
 ParameterName=Lq_Id6
@@ -8822,7 +8341,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2116]
 ParameterName=Lq_Id7
@@ -8847,7 +8365,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2120]
 ParameterName=Ld_Id1
@@ -8872,7 +8389,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2121]
 ParameterName=Ld_Id2
@@ -8897,7 +8413,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2122]
 ParameterName=Ld_Id3
@@ -8922,7 +8437,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2123]
 ParameterName=Ld_Id4
@@ -8947,7 +8461,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2124]
 ParameterName=Ld_Id5
@@ -8972,7 +8485,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2125]
 ParameterName=Ld_Id6
@@ -8997,7 +8509,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2126]
 ParameterName=Ld_Id7
@@ -9022,7 +8533,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=3445
-Unit=uH
 
 [2130]
 ParameterName=MemoryDebugAccess
@@ -9160,7 +8670,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=see Description
 
 [2135sub7]
 ParameterName=PWMLevelV
@@ -9171,7 +8680,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=see Description
 
 [2135sub8]
 ParameterName=PWMLevelW
@@ -9182,7 +8690,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=see Description
 
 [2135sub9]
 ParameterName=Period
@@ -9193,7 +8700,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=see Description
 
 [2140]
 ParameterName=BestPerformanceCurveSpeed
@@ -9218,7 +8724,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=Rpm
 
 [2141]
 ParameterName=BestPerformanceCurveCurrent
@@ -9243,7 +8748,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=2316
-Unit=Arms
 
 [2142]
 ParameterName=BestPerformanceCurveRegulator
@@ -9268,7 +8772,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2142sub3]
 ParameterName=InternalCurrentReference
@@ -9279,7 +8782,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2142sub4]
 ParameterName=ReductionFactor
@@ -9289,7 +8791,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=1
 HighLimit=256
-Unit=see Description
 
 [2150]
 ParameterName=ForcedReverse
@@ -9311,11 +8812,10 @@ ParameterName=ForcedReverseSpeed
 ObjectType=0x7
 DataType=0x0003
 AccessType=rw
-DefaultValue=0x-FA
+DefaultValue=-250
 PDOMapping=0x0
 LowLimit=-32765
 HighLimit=32765
-Unit=Rpm
 
 [2150sub2]
 ParameterName=ForcedReverseTimeout
@@ -9326,7 +8826,6 @@ DefaultValue=0x1388
 PDOMapping=0x0
 LowLimit=0
 HighLimit=8191
-Unit=ms
 
 [2150sub3]
 ParameterName=ForcedReverseEnable
@@ -9347,7 +8846,6 @@ DefaultValue=0x1E
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=Rpm/20ms
 
 [2150sub5]
 ParameterName=ForcedReverseDeceleration
@@ -9358,7 +8856,6 @@ DefaultValue=0x1E
 PDOMapping=0x0
 LowLimit=0
 HighLimit=255
-Unit=Rpm/20ms
 
 [2150sub6]
 ParameterName=ForcedBrakeEnable
@@ -9393,7 +8890,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=TBD
 
 [2200sub2]
 ParameterName=IGain
@@ -9403,7 +8899,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=TBD
 
 [2200sub3]
 ParameterName=OutputMaxLimit
@@ -9413,7 +8908,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2200sub4]
 ParameterName=CommandSpeed
@@ -9424,7 +8918,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2200sub5]
 ParameterName=InternalPositionReference
@@ -9434,8 +8927,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2200sub6]
 ParameterName=PositionRegIPart
@@ -9445,8 +8936,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2215]
 ParameterName=Encoder1
@@ -9740,8 +9229,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=-1800
 HighLimit=1799
-Factor=0.1
-Unit=Deg
 
 [2225subC]
 ParameterName=PositionInternalScale
@@ -9751,7 +9238,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2251]
 ParameterName=MemoryAccessBank1
@@ -10093,7 +9579,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2300sub2]
 ParameterName=MinValue
@@ -10103,7 +9588,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2300sub3]
 ParameterName=MaxValue
@@ -10113,7 +9597,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2300sub4]
 ParameterName=FilterType
@@ -10132,7 +9615,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=ms
 
 [2300sub6]
 ParameterName=Parameter1
@@ -10176,7 +9658,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2301sub2]
 ParameterName=MinValue
@@ -10186,7 +9667,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2301sub3]
 ParameterName=MaxValue
@@ -10196,7 +9676,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2301sub4]
 ParameterName=FilterType
@@ -10215,7 +9694,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=ms
 
 [2301sub6]
 ParameterName=Parameter1
@@ -10259,7 +9737,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2302sub2]
 ParameterName=MinValue
@@ -10269,7 +9746,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2302sub3]
 ParameterName=MaxValue
@@ -10279,7 +9755,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=mV
 
 [2302sub4]
 ParameterName=FilterType
@@ -10298,7 +9773,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=ms
 
 [2302sub6]
 ParameterName=Parameter1
@@ -10491,8 +9965,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2471]
 ParameterName=OpenDrainOutputFilteredVoltage
@@ -10517,8 +9989,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2480]
 ParameterName=OpenDrainOutputPeriod
@@ -10586,8 +10056,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2491sub4]
 ParameterName=HighSideOutCurrent
@@ -10598,7 +10066,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=mA
 
 [2491subB]
 ParameterName=HighSidePeakCurrentLevel
@@ -10608,7 +10075,6 @@ AccessType=rw
 DefaultValue=0x1770
 PDOMapping=0x0
 LowLimit=0
-Unit=mA
 
 [2491subC]
 ParameterName=HighSideOverloadCurrentLevel
@@ -10618,7 +10084,6 @@ AccessType=rw
 DefaultValue=0xFA0
 PDOMapping=0x0
 LowLimit=0
-Unit=mA
 
 [2491subD]
 ParameterName=OpenDrainsOnHighSide
@@ -10653,18 +10118,16 @@ DefaultValue=0x1194
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2500sub2]
 ParameterName=OverSpeedLimitReverse
 ObjectType=0x7
 DataType=0x0003
 AccessType=rw
-DefaultValue=0x-1194
+DefaultValue=1194
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=0
-Unit=Rpm
 
 [2500sub3]
 ParameterName=CurrentSpeedLimitForward
@@ -10674,7 +10137,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2500sub4]
 ParameterName=CurrentSpeedLimitReverse
@@ -10684,7 +10146,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2500sub5]
 ParameterName=ACCurrentControlCurrentLimit
@@ -10695,7 +10156,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=100
-Unit=%
 
 [2500sub6]
 ParameterName=ACCurrentControlUpeakLimit
@@ -10706,7 +10166,6 @@ DefaultValue=0x4B
 PDOMapping=0x0
 LowLimit=0
 HighLimit=100
-Unit=%
 
 [2500sub7]
 ParameterName=ACCurrentControlDcVoltageLimit
@@ -10717,7 +10176,6 @@ DefaultValue=0x19
 PDOMapping=0x0
 LowLimit=0
 HighLimit=100
-Unit=%
 
 [2500sub8]
 ParameterName=ACCurrentMeasSpeedLimit
@@ -10728,7 +10186,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2500sub9]
 ParameterName=ACCurrentMeasCurrentLimit
@@ -10739,7 +10196,6 @@ DefaultValue=0x03
 PDOMapping=0x0
 LowLimit=0
 HighLimit=100
-Unit=%
 
 [2500subA]
 ParameterName=ACCurrentMeasUpeakLimit
@@ -10750,7 +10206,6 @@ DefaultValue=0x03
 PDOMapping=0x0
 LowLimit=0
 HighLimit=100
-Unit=%
 
 [2500subB]
 ParameterName=ACCurrentMeasDcVoltageLimit
@@ -10761,7 +10216,6 @@ DefaultValue=0x19
 PDOMapping=0x0
 LowLimit=0
 HighLimit=100
-Unit=%
 
 [2500subC]
 ParameterName=TestMode
@@ -10846,8 +10300,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2640sub7]
 ParameterName=PPart
@@ -10857,7 +10309,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2640sub8]
 ParameterName=IPart
@@ -10867,7 +10318,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2640sub9]
 ParameterName=DPart
@@ -10877,7 +10327,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2640subA]
 ParameterName=MaxCommandVoltageChange
@@ -10888,7 +10337,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=see Description
 
 [2640subB]
 ParameterName=CommandVoltageRamped
@@ -10898,8 +10346,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2640subC]
 ParameterName=OutputReductionSpeedLimit
@@ -10910,7 +10356,6 @@ DefaultValue=0x4B0
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=Rpm
 
 [2640subD]
 ParameterName=PGainSpeedComp
@@ -10972,7 +10417,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=see Description
 
 [2800sub2]
 ParameterName=Index0
@@ -11083,7 +10527,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4000
-Unit=Hz
 
 [2800sub25]
 ParameterName=TriggerMode
@@ -11191,7 +10634,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2851]
 ParameterName=PowerStageTempLogAxis
@@ -11217,7 +10659,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=degC
 
 [2860]
 ParameterName=MotorTempLog
@@ -11243,7 +10684,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2861]
 ParameterName=MotorTempLogAxis
@@ -11269,7 +10709,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=degC
 
 [2900]
 ParameterName=OperationDataLog
@@ -11319,7 +10758,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2902]
 ParameterName=OperationDataLogCurrentAxis
@@ -11345,7 +10783,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2910]
 ParameterName=OperationDataLogCurrentAxle0
@@ -11371,7 +10808,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=counts
 
 [2911]
 ParameterName=OperationDataLogCurrentAxle1
@@ -11397,7 +10833,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2912]
 ParameterName=OperationDataLogCurrentAxle2
@@ -11423,7 +10858,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2913]
 ParameterName=OperationDataLogCurrentAxle3
@@ -11449,7 +10883,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2914]
 ParameterName=OperationDataLogCurrentAxle4
@@ -11475,7 +10908,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2915]
 ParameterName=OperationDataLogCurrentAxle5
@@ -11501,7 +10933,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2916]
 ParameterName=OperationDataLogCurrentAxle6
@@ -11527,7 +10958,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2917]
 ParameterName=OperationDataLogCurrentAxle7
@@ -11553,7 +10983,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2918]
 ParameterName=OperationDataLogCurrentAxle8
@@ -11579,7 +11008,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2919]
 ParameterName=OperationDataLogCurrentAxle9
@@ -11605,7 +11033,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [291A]
 ParameterName=OperationDataLogCurrentAxle10
@@ -11631,7 +11058,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=incs
 
 [2A00]
 ParameterName=FreezeFrames
@@ -11716,7 +11142,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=incs
 
 [2A03]
 ParameterName=FreezeFrameTimeStamp
@@ -11742,7 +11167,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=s
 
 [2A04]
 ParameterName=FreezeFrameRotorSpeed
@@ -11768,7 +11192,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=Rpm
 
 [2A05]
 ParameterName=FreezeFrameRmsMotorCurrent
@@ -11794,7 +11217,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2A06]
 ParameterName=FreezeFrameDcBusVoltage
@@ -11820,8 +11242,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Factor=0.01
-Unit=Vdc
 
 [2A07]
 ParameterName=FreezeFrameIqRef
@@ -11847,7 +11267,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2A08]
 ParameterName=FreezeFrameIdRef
@@ -11873,7 +11292,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2A09]
 ParameterName=FreezeFrameActIq
@@ -11899,7 +11317,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2A0A]
 ParameterName=FreezeFrameActId
@@ -11925,7 +11342,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-2317
 HighLimit=2316
-Unit=Arms
 
 [2A0B]
 ParameterName=FreezeFrameUqRef
@@ -11951,7 +11367,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2A0C]
 ParameterName=FreezeFrameUdRef
@@ -11977,7 +11392,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [2A0D]
 ParameterName=FreezeFrameMotorTemp
@@ -12003,7 +11417,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-256
 HighLimit=254
-Unit=degC
 
 [2A0E]
 ParameterName=FreezeFramePowerStageTemp
@@ -12029,7 +11442,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-256
 HighLimit=254
-Unit=degC
 
 [2A0F]
 ParameterName=FreezeFramePcbTemp
@@ -12055,7 +11467,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-256
 HighLimit=254
-Unit=degC
 
 [3002]
 ParameterName=ErrorLogCopy
@@ -12105,7 +11516,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=See Description
 
 [3004]
 ParameterName=ErrorLogLastTime
@@ -12131,7 +11541,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=See Description
 
 [3005]
 ParameterName=ErrorLogNumberOfErrors
@@ -12157,7 +11566,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=incs
 
 [3006]
 ParameterName=EventLog
@@ -12208,7 +11616,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=See Description
 
 [3008]
 ParameterName=EventLogLastTime
@@ -12234,7 +11641,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=See Description
 
 [3009]
 ParameterName=EventLogNumberOfEvents
@@ -12260,7 +11666,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=incs
 
 [300A]
 ParameterName=EventLogMasterClear
@@ -12316,7 +11721,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=incs
 
 [3010sub4]
 ParameterName=TrigEvent
@@ -12415,7 +11819,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [4000sub5]
 ParameterName=Iv
@@ -12425,7 +11828,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [4000sub6]
 ParameterName=Iw
@@ -12435,7 +11837,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [4000sub7]
 ParameterName=SetDefaultValues
@@ -12454,7 +11855,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=see Description
 
 [4000sub9]
 ParameterName=IvPosTempGain
@@ -12465,7 +11865,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [4000subA]
 ParameterName=IvNegTempGain
@@ -12476,7 +11875,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [4000subB]
 ParameterName=IwGain
@@ -12486,7 +11884,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=see Description
 
 [4000subC]
 ParameterName=IwPosTempGain
@@ -12497,7 +11894,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [4000subD]
 ParameterName=IwNegTempGain
@@ -12508,7 +11904,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=-32768
 HighLimit=32767
-Unit=see Description
 
 [4000subE]
 ParameterName=IvOffset
@@ -12538,7 +11933,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [4000sub16]
 ParameterName=Ialpha
@@ -12548,7 +11942,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [4000sub17]
 ParameterName=Ibeta
@@ -12558,7 +11951,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=-3276
 HighLimit=3276
-Unit=Apk
 
 [4100]
 ParameterName=AverageExecutionTimes
@@ -12584,7 +11976,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4100sub2]
 ParameterName=50Hz
@@ -12595,7 +11986,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4100sub3]
 ParameterName=IndependentSupervision
@@ -12606,7 +11996,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4100sub4]
 ParameterName=CAN
@@ -12617,7 +12006,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4100sub5]
 ParameterName=SlowApplication
@@ -12628,7 +12016,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4100sub6]
 ParameterName=FastApplication
@@ -12639,7 +12026,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4101]
 ParameterName=MaxExecutionTimes
@@ -12665,7 +12051,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4101sub2]
 ParameterName=50Hz
@@ -12676,7 +12061,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4101sub3]
 ParameterName=IndependentSupervision
@@ -12687,7 +12071,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4101sub4]
 ParameterName=CAN
@@ -12698,7 +12081,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4101sub5]
 ParameterName=SlowApplication
@@ -12709,7 +12091,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4101sub6]
 ParameterName=FastApplication
@@ -12720,7 +12101,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=us
 
 [4102]
 ParameterName=RTOS
@@ -12756,7 +12136,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=incs
 
 [4102sub5]
 ParameterName=InternalDebugModuleName
@@ -13242,7 +12621,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=see Description
 
 [5F01]
 ParameterName=SwDeviceInformation
@@ -13295,7 +12673,6 @@ AccessType=ro
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=see Description
 
 [5F01sub6]
 ParameterName=ApplicationSwCheckSum
@@ -13468,7 +12845,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=h
 
 [5F04]
 ParameterName=CANParameters
@@ -13494,7 +12870,6 @@ DefaultValue=0x1F4
 PDOMapping=0x0
 LowLimit=125
 HighLimit=1000
-Unit=kbit/s
 
 [5F04sub6]
 ParameterName=SyncTimeout
@@ -13505,7 +12880,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=8000
-Unit=ms
 
 [5F04sub7]
 ParameterName=NodeId
@@ -13552,7 +12926,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=8000
-Unit=ms
 
 [5F05]
 ParameterName=RxPdoTimeouts
@@ -13577,7 +12950,6 @@ AccessType=rw
 PDOMapping=0x0
 LowLimit=0
 HighLimit=8000
-Unit=ms
 
 [5F10]
 ParameterName=ProductInformation
@@ -13632,7 +13004,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=4294967295
-Unit=see Description
 
 [5F10sub6]
 ParameterName=ItemStatus
@@ -13650,7 +13021,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=32767
-Unit=ARMS
 
 [5F10sub8]
 ParameterName=CustomerItemNumber
@@ -13675,7 +13045,6 @@ DefaultValue=0x00
 PDOMapping=0x0
 LowLimit=0
 HighLimit=65535
-Unit=Vdc
 
 [5F10subB]
 ParameterName=HardwareConfiguration
