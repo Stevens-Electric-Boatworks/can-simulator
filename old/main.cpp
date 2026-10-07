@@ -30,15 +30,15 @@
 using namespace lely;
 
 // ── UDP configuration ────────────────────────────────────────────────────────
-static constexpr uint16_t UDP_PORT        = 5005;   // must match Simulink's "Remote port"
-static constexpr size_t   UDP_BUF_SIZE    = 256;    // bytes – enlarge if Simulink sends more signals
+static constexpr uint16_t UDP_PORT = 5005; // must match Simulink's "Remote port"
+static constexpr size_t UDP_BUF_SIZE = 256; // bytes – enlarge if Simulink sends more signals
 
 // ── Object-dictionary placeholder ───────────────────────────────────────────
 // Replace these with your real indices/sub-indices.
 // Simulink typically sends doubles (8 bytes each); adjust the type to match
 // whatever signal type your EDS actually maps.
-static constexpr uint16_t OD_INDEX_1      = 0x2030; // ← replace
-static constexpr uint8_t  OD_SUBINDEX_1   = 3;   // ← replace
+static constexpr uint16_t OD_INDEX_1 = 0x2030; // ← replace
+static constexpr uint8_t OD_SUBINDEX_1 = 3; // ← replace
 // add more as needed …
 
 
@@ -51,11 +51,12 @@ public:
             const std::string& eds,
             uint8_t node_id)
         : canopen::BasicSlave(timer, chan, eds, "", node_id)
-    {}
+    {
+    }
 
     // Thread-safe helper: write a value into the OD from any thread.
     // Lely's Write() is NOT thread-safe by itself, so we guard it.
-    template<typename T>
+    template <typename T>
     void SafeWrite(uint16_t index, uint8_t subindex, T value)
     {
         std::lock_guard<std::mutex> lock(od_mutex_);
@@ -80,14 +81,15 @@ private:
 
 struct SimulinkPacket
 {
-    double signal1;   // ← rename / retype to match your Simulink outport
+    double signal1; // ← rename / retype to match your Simulink outport
 };
 
 void udp_receiver_thread(MySlave& slave, std::atomic<bool>& running)
 {
     // ── open socket ──────────────────────────────────────────────────────────
     int sock = ::socket(AF_INET, SOCK_DGRAM, 0);
-    if (sock < 0) {
+    if (sock < 0)
+    {
         std::perror("UDP socket");
         return;
     }
@@ -97,15 +99,16 @@ void udp_receiver_thread(MySlave& slave, std::atomic<bool>& running)
     ::setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
 
     // Set a receive timeout so the thread can check `running` periodically
-    struct timeval tv{ .tv_sec = 1, .tv_usec = 0 };
+    struct timeval tv{.tv_sec = 1, .tv_usec = 0};
     ::setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
 
     sockaddr_in addr{};
-    addr.sin_family      = AF_INET;
+    addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = INADDR_ANY;
-    addr.sin_port        = htons(UDP_PORT);
+    addr.sin_port = htons(UDP_PORT);
 
-    if (::bind(sock, reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) < 0) {
+    if (::bind(sock, reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) < 0)
+    {
         std::perror("UDP bind");
         ::close(sock);
         return;
@@ -115,18 +118,21 @@ void udp_receiver_thread(MySlave& slave, std::atomic<bool>& running)
 
     uint8_t buf[UDP_BUF_SIZE];
 
-    while (running.load()) {
+    while (running.load())
+    {
         ssize_t n = ::recv(sock, buf, sizeof(buf), 0);
 
-        if (n < 0) {
+        if (n < 0)
+        {
             // EAGAIN / EWOULDBLOCK just means the 1-second timeout fired
             continue;
         }
 
-        if (static_cast<size_t>(n) < sizeof(SimulinkPacket)) {
+        if (static_cast<size_t>(n) < sizeof(SimulinkPacket))
+        {
             std::fprintf(stderr,
-                "[UDP] Short packet: got %zd bytes, expected %zu\n",
-                n, sizeof(SimulinkPacket));
+                         "[UDP] Short packet: got %zd bytes, expected %zu\n",
+                         n, sizeof(SimulinkPacket));
             continue;
         }
 
@@ -138,27 +144,25 @@ void udp_receiver_thread(MySlave& slave, std::atomic<bool>& running)
                     pkt.signal1);
         slave.SafeWrite<int16_t>(OD_INDEX_1, OD_SUBINDEX_1,
                                  static_cast<int16_t>(std::abs(pkt.signal1 * 1000)));
-
-
-
     }
     ::close(sock);
     std::printf("[UDP] Receiver thread exiting.\n");
 }
 
 
-int main() {
+int main()
+{
     io::Context ctx;
-    io::Poll    poll(ctx);
-    ev::Loop    loop(poll.get_poll());
-    auto            exec = loop.get_executor();
+    io::Poll poll(ctx);
+    ev::Loop loop(poll.get_poll());
+    auto exec = loop.get_executor();
 
-    io::Timer      timer(poll, exec, CLOCK_REALTIME);
+    io::Timer timer(poll, exec, CLOCK_REALTIME);
     io::CanController ctrl("vcan0");
-    io::CanChannel    chan(poll, exec);
+    io::CanChannel chan(poll, exec);
     chan.open(ctrl);
 
-    MySlave slave(timer, chan, "/home/isayal/motors.eds", 7);
+    MySlave slave(timer, chan, "/home/isayal/motors.eds", 6);
 
     // ── Signal handler ───────────────────────────────────────────────────────
     io::SignalSet sigset(poll, exec);
@@ -171,7 +175,7 @@ int main() {
     sigset.submit_wait([&](int /*signo*/)
     {
         sigset.clear();
-        udp_running.store(false);   // tell the UDP thread to stop
+        udp_running.store(false); // tell the UDP thread to stop
         ctx.shutdown();
     });
 
@@ -181,17 +185,17 @@ int main() {
                            std::ref(udp_running));
 
     slave.Reset();
-    slave.Write(0x2030, 3, static_cast<int16_t>(90));
-    slave.Write(0x2030, 2, static_cast<int16_t>(189));
-    slave.Write(0x2040, 3, static_cast<int16_t>(29));
-    slave.Write(0x2071, 2, static_cast<int16_t>(-327));
+    slave.Write(0x2030, 3, static_cast<int16_t>(120));
+    slave.Write(0x2030, 2, static_cast<int16_t>(670));
+    slave.Write(0x2040, 3, static_cast<int16_t>(12));
+    slave.Write(0x2071, 2, static_cast<int16_t>(-32767));
 
     std::printf("Node ID : %u\n", slave.id());
     std::printf("Net ID  : %u\n", slave.netid());
-    std::printf("Test read 0x2030/2 : %d\n", slave.Read<int16_t>(0x2030, 2));
-    std::printf("Test read 0x2040/3 : %d\n", slave.Read<int16_t>(0x2040, 11));
+    // std::printf("Test read 0x2030/2 : %d\n", slave.Read<int16_t>(0x2030, 2));
+    // std::printf("Test read 0x2040/3 : %d\n", slave.Read<int16_t>(0x2040, 11));
 
-    loop.run();   // blocks until ctx.shutdown()
+    loop.run(); // blocks until ctx.shutdown()
 
     udp_running.store(false);
     udp_thread.join();
