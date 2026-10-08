@@ -13,7 +13,7 @@ namespace eboat::gui {
         void run();
 
     private:
-        void run_loop_();
+        void drawMotorODParameters();
 
         GUIStateManager gui_state_;
         std::unique_ptr<std::thread> thread_;

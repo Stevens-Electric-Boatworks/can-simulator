@@ -20,13 +20,13 @@ eboat::SimManger::SimManger()
     lely_controller = std::make_unique<lely::io::CanController>("vcan0");
 }
 
-eboat::SimMotorController& eboat::SimManger::createNewMotorController(std::string name, int8_t id)
+eboat::SimMotorController& eboat::SimManger::createNewMotorController(std::string name, int8_t id, const std::vector<MotorODParam>& default_od_params)
 {
     auto timer = lely::io::Timer(*lely_poll, lely_loop->get_executor(), CLOCK_MONOTONIC);
     auto channel = lely::io::CanChannel(*lely_poll, lely_loop->get_executor());
     motor_controllers_.push_back(
         std::make_unique<SimMotorController>(std::move(name), id, std::move(timer), std::move(channel),
-                                             "/home/isayal/motors.eds"));
+                                             "/home/isayal/motors.eds", default_od_params));
     return *motor_controllers_.back();
 }
 
@@ -46,4 +46,9 @@ void eboat::SimManger::startLely()
 
 eboat::SimMotorController &eboat::SimManger::getMotor(const int motor) const {
     return *motor_controllers_.at(motor);
+}
+
+unsigned long eboat::SimManger::getMotorCount() const
+{
+    return this->motor_controllers_.size();
 }

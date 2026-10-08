@@ -19,7 +19,7 @@ namespace eboat
     public:
         SimManger();
 
-        SimMotorController& createNewMotorController(std::string name, int8_t id);
+        SimMotorController& createNewMotorController(std::string name, int8_t id, const std::vector<MotorODParam>& default_od_params);
         void startLely();
 
         [[nodiscard]] std::thread& getBackgroundThread() const
@@ -28,6 +28,7 @@ namespace eboat
         }
 
         SimMotorController &getMotor(int motor) const;
+        unsigned long getMotorCount() const;
 
     private:
         std::vector<std::unique_ptr<SimMotorController>> motor_controllers_ = {};
