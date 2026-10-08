@@ -27,6 +27,8 @@ namespace eboat
             return *this->lely_background_loop_thread_;
         }
 
+        SimMotorController &getMotor(int motor) const;
+
     private:
         std::vector<std::unique_ptr<SimMotorController>> motor_controllers_ = {};
         std::unique_ptr<lely::io::Context> lely_ctx;

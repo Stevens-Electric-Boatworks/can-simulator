@@ -43,3 +43,7 @@ void eboat::SimManger::startLely()
         this->lely_loop->run();
     });;
 }
+
+eboat::SimMotorController &eboat::SimManger::getMotor(const int motor) const {
+    return *motor_controllers_.at(motor);
+}
