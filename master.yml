@@ -28,8 +28,8 @@ slave_6:
       enabled: true
       transmission: 0x01
       mapping:
-        - {index: 0x2030, sub_index: 2}
-        - {index: 0x2030, sub_index: 3}
+        - { index: 0x2030, sub_index: 2 }
+        - { index: 0x2030, sub_index: 3 }
 slave_7:
   dcf: "motors.eds"
   node_id: 7
@@ -46,8 +46,8 @@ slave_7:
       enabled: true
       transmission: 0x01
       mapping:
-        - {index: 0x2030, sub_index: 2}
-        - {index: 0x2030, sub_index: 3}
+        - { index: 0x2030, sub_index: 2 }
+        - { index: 0x2030, sub_index: 3 }
 
 options:
   dcf_path: "."

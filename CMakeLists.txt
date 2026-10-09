@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.21)
-project(can_simulator CXX)
+cmake_minimum_required(VERSION 3.28)
+project(can_simulator)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(PkgConfig REQUIRED)
@@ -14,31 +14,30 @@ pkg_check_modules(LELY REQUIRED
         liblely-util
 )
 
-add_executable(can_simulator_id6
+if (NOT TARGET hello_imgui)
+    message(STATUS "Fetching hello_imgui")
+    include(FetchContent)
+    FetchContent_Declare(hello_imgui GIT_REPOSITORY https://github.com/pthom/hello_imgui.git GIT_TAG master EXCLUDE_FROM_ALL)
+    FetchContent_MakeAvailable(hello_imgui)
+endif()
+
+hello_imgui_add_app(can_simulator
         src/main.cpp
-)
-add_executable(can_simulator_id7
-        src/main2.cpp
-)
-
-target_include_directories(can_simulator_id6
-        PRIVATE ${LELY_INCLUDE_DIRS}
-)
-target_include_directories(can_simulator_id7
-        PRIVATE ${LELY_INCLUDE_DIRS}
+        src/can/motor/SimMotorController.cpp
+        src/can/SimManager.cpp
+        src/gui/GUIManager.cpp
+        src/gui/GUIStateManager.cpp
 )
 
-target_link_libraries(can_simulator_id6
-        PRIVATE ${LELY_LIBRARIES}
+target_include_directories(can_simulator
+        PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include"
+        PRIVATE ${LELY_INCLUDE_DIRS}
 )
-target_link_libraries(can_simulator_id7
+
+target_link_libraries(can_simulator
         PRIVATE ${LELY_LIBRARIES}
 )
 
-
-target_compile_options(can_simulator_id6
-        PRIVATE ${LELY_CFLAGS_OTHER}
-)
-target_compile_options(can_simulator_id7
+target_compile_options(can_simulator
         PRIVATE ${LELY_CFLAGS_OTHER}
 )
