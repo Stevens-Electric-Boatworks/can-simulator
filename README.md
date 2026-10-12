@@ -1,5 +1,5 @@
-# can-simulator
-Internal tool to simulate realistic CAN bus activity for TidalCore.
+# InMotion CAN Simulator
+WIP tool to simulate realistic CAN bus activity for TidalCore.
 
 ## Configuring
 
