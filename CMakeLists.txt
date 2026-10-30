@@ -8,6 +8,11 @@ add_executable(can_simulator
         src/main.cpp
         include/can/generic/SimCanDevice.h
         src/can/CanIo.cpp
+        src/can/sensors/ExampleSensor.cpp
+        src/can/generic/EBPSimDevice.cpp
+        src/can/devices/ExampleDevice.cpp
+        src/can/SimManager.cpp
+        include/can/generic/EBPStructs.h
 )
 # download CPM.cmake
 file(

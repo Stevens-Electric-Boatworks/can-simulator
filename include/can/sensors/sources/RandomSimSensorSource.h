@@ -8,9 +8,12 @@
 namespace eboat
 {
     template <typename T>
-    class RandomSimSensorSource: SimSensorSource<T>
+    class RandomSimSensorSource: public SimSensorSource<T>
     {
     public:
-        T next() override;
+        T next() {
+            //TODO add a proper random gen
+            return -5;
+        }
     };
 }

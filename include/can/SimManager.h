@@ -3,12 +3,21 @@
 // Copyright (c) 2026 Stevens Electric Boatworks.
 
 #pragma once
+#include "generic/SimCanDevice.h"
 
 namespace eboat
 {
-    class SimCanDevice
+    class SimManager
     {
     public:
-        void register_device(const SimCanDevice& device);
+        void register_device(std::unique_ptr<SimCanDevice> device);
+
+        TaskScheduler& init_scheduler();
+
+        void start() const;
+
+    private:
+        std::vector<std::unique_ptr<SimCanDevice>> devices;
+        std::unique_ptr<TaskScheduler> scheduler_;
     };
 }

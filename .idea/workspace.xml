@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="BackendCodeEditorMiscSettings">
-    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="4" type="long" />
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="6" type="long" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
@@ -21,11 +21,8 @@
   <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="can_simulator" targetName="can_simulator" />
-      <config projectName="can_simulator" targetName="stb_hello_imgui" />
-      <config projectName="can_simulator" targetName="hello_imgui" />
-      <config projectName="can_simulator" targetName="plutosvg" />
-      <config projectName="can_simulator" targetName="glad" />
-      <config projectName="can_simulator" targetName="imgui" />
+      <config projectName="can_simulator" targetName="libsockcan_docs" />
+      <config projectName="can_simulator" targetName="sockcanpp" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -35,7 +32,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2aafb15f-8729-4f5b-9846-7c228b19efe3" name="Changes" comment="[feat] add DCF gen&#10;&#10;Add configuration files for DCFGen to generate the master.dcf file needed">
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/can/sensors/ExampleSensor.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/can/sensors/sources/RandomSimSensorSource.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/can/CanIo.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/can/CanIo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/can/generic/SimSensor.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/can/generic/SimSensor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/can/sensors/ExampleSensor.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/can/sensors/ExampleSensor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/can/CanIo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/can/CanIo.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,60 +88,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000000235727" />
-      <entry key="S2" value="1.002758204456258" />
-      <entry key="S5" value="1.136437602031293" />
-      <entry key="S10" value="1.5175710924863073" />
-      <entry key="S30" value="2.2905990714190922" />
-      <entry key="S60" value="3.205669038822632" />
-      <entry key="M2" value="7.558302390477712" />
-      <entry key="M5" value="31.30420495518586" />
-      <entry key="M10" value="75.96003939778934" />
-      <entry key="M15" value="114.73377715164482" />
-      <entry key="M30" value="200.13419335923587" />
-      <entry key="H1" value="332.6875556471916" />
-      <entry key="H2" value="577.0201201831695" />
-      <entry key="H4" value="894.5578739429516" />
-      <entry key="D1" value="1423.8338894514795" />
-      <entry key="W1" value="1555.5221818855623" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.000000247348696" />
+      <entry key="S5" value="1.0037837728716275" />
+      <entry key="S10" value="1.2242906852839635" />
+      <entry key="S30" value="9.003034445910737" />
+      <entry key="S60" value="27.57351295938128" />
+      <entry key="M2" value="59.333307650711596" />
+      <entry key="M5" value="116.69779590363811" />
+      <entry key="M10" value="177.88649882077016" />
+      <entry key="M15" value="224.89268002510246" />
+      <entry key="M30" value="324.1548440130618" />
+      <entry key="H1" value="467.3502662133222" />
+      <entry key="H2" value="718.1230705586503" />
+      <entry key="H4" value="1042.471716343107" />
+      <entry key="D1" value="1586.6355226606793" />
+      <entry key="W1" value="1722.7136026737087" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="9.983473710670673E-62" />
-      <entry key="MS500" value="6.307486588099821E-13" />
-      <entry key="S2" value="8.911772349057145E-4" />
-      <entry key="S5" value="0.060253965378076875" />
-      <entry key="S10" value="0.24546683691092366" />
-      <entry key="S30" value="0.6305954110914643" />
-      <entry key="S60" value="0.9382540942673555" />
-      <entry key="M2" value="1.9234324107172198" />
-      <entry key="M5" value="5.8846198993268874" />
-      <entry key="M10" value="11.413809998768256" />
-      <entry key="M15" value="15.120548385334331" />
-      <entry key="M30" value="21.160607442866638" />
-      <entry key="H1" value="30.13069935376148" />
-      <entry key="H2" value="53.558903047682165" />
-      <entry key="H4" value="89.49554460610263" />
-      <entry key="D1" value="154.35232504147362" />
-      <entry key="W1" value="171.0135823437162" />
+      <entry key="MS100" value="3.809426338589323E-145" />
+      <entry key="MS500" value="1.3067397181228222E-29" />
+      <entry key="S2" value="6.489229569419295E-8" />
+      <entry key="S5" value="0.0017868941521683164" />
+      <entry key="S10" value="0.06471007613751929" />
+      <entry key="S30" value="1.0262377813313646" />
+      <entry key="S60" value="2.7916403932619818" />
+      <entry key="M2" value="6.083256092019391" />
+      <entry key="M5" value="13.38211995804555" />
+      <entry key="M10" value="21.378181577020285" />
+      <entry key="M15" value="26.63791082232847" />
+      <entry key="M30" value="35.22612471175462" />
+      <entry key="H1" value="45.85849958569493" />
+      <entry key="H2" value="69.94146972487272" />
+      <entry key="H4" value="106.43778656719348" />
+      <entry key="D1" value="172.7831529618737" />
+      <entry key="W1" value="189.9239456072366" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.349232263793676E-53" />
-      <entry key="MS500" value="3.1418466280831585E-11" />
-      <entry key="S2" value="0.004549720615008418" />
-      <entry key="S5" value="0.2539066419089681" />
-      <entry key="S10" value="1.0002781132327825" />
-      <entry key="S30" value="2.5363246454023014" />
-      <entry key="S60" value="3.8989338131367592" />
-      <entry key="M2" value="9.290722099688043" />
-      <entry key="M5" value="37.046773055647655" />
-      <entry key="M10" value="87.27223810945479" />
-      <entry key="M15" value="129.77387792298558" />
-      <entry key="M30" value="221.24265358898313" />
-      <entry key="H1" value="362.78268710775245" />
-      <entry key="H2" value="630.5508754220136" />
-      <entry key="H4" value="984.0319286913002" />
-      <entry key="D1" value="1578.1804486106225" />
-      <entry key="W1" value="1726.5348607257647" />
+      <entry key="MS100" value="1.9422277435422817E-4" />
+      <entry key="MS500" value="0.18099227154744488" />
+      <entry key="S2" value="0.652251562461104" />
+      <entry key="S5" value="0.8475713136938854" />
+      <entry key="S10" value="1.1927161606163779" />
+      <entry key="S30" value="9.93272062710929" />
+      <entry key="S60" value="30.264007892383177" />
+      <entry key="M2" value="65.30475779060365" />
+      <entry key="M5" value="129.95569075515826" />
+      <entry key="M10" value="199.15645659347524" />
+      <entry key="M15" value="251.43891240331652" />
+      <entry key="M30" value="359.3181368771168" />
+      <entry key="H1" value="513.1662398221365" />
+      <entry key="H2" value="788.0325204483386" />
+      <entry key="H4" value="1148.885915499045" />
+      <entry key="D1" value="1759.4125022587186" />
+      <entry key="W1" value="1912.6365840664462" />
     </decayedShown>
   </component>
   <component name="ProjectApplicationVersion">
@@ -151,6 +155,9 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3DVAe3gIGAMsZZh4j6PHCuNsvqA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -161,6 +168,7 @@
     "CMake Application.can_simulator.executor": "Run",
     "CMake Debug.can_simulator.executor": "Debug",
     "CidrDebugProfileConversion": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -174,7 +182,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "v2",
+    "git-widget-placeholder": "can__classic",
     "last_opened_file_path": "/home/isayal/stevens_eboat/eboat_src/ros_ws",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
@@ -259,24 +267,9 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeBoostTestRunConfigurationType" factoryName="Boost Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="BeforeTestRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="can_simulator" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
@@ -302,27 +295,12 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="glad" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="can_simulator" TARGET_NAME="glad" CONFIG_NAME="Debug">
+    <configuration name="libsockcan_docs" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="can_simulator" TARGET_NAME="libsockcan_docs" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="hello_imgui" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="can_simulator" TARGET_NAME="hello_imgui" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="imgui" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="can_simulator" TARGET_NAME="imgui" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="plutosvg" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="can_simulator" TARGET_NAME="plutosvg" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="stb_hello_imgui" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="can_simulator" TARGET_NAME="stb_hello_imgui" CONFIG_NAME="Debug">
+    <configuration name="sockcanpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="can_simulator" TARGET_NAME="sockcanpp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -335,11 +313,8 @@
     </configuration>
     <list>
       <item itemvalue="C/C++ File.main.cpp" />
-      <item itemvalue="CMake Application.glad" />
-      <item itemvalue="CMake Application.hello_imgui" />
-      <item itemvalue="CMake Application.imgui" />
-      <item itemvalue="CMake Application.plutosvg" />
-      <item itemvalue="CMake Application.stb_hello_imgui" />
+      <item itemvalue="CMake Application.libsockcan_docs" />
+      <item itemvalue="CMake Application.sockcanpp" />
       <item itemvalue="CMake Application.can_simulator" />
       <item itemvalue="CMake Debug.can_simulator" />
     </list>
@@ -354,24 +329,10 @@
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
   </component>
-  <component name="SelectedDebugProfileService">{
-  &quot;profileIdByStamp&quot;: [
-    {
-      &quot;first&quot;: {
-        &quot;##RUN_CONFIGURATION##&quot;: &quot;CMake Application.can_simulator&quot;,
-        &quot;cmake&quot;: &quot;CMakeBuildProfile:Debug&quot;
-      },
-      &quot;second&quot;: &quot;9c5ef852-db80-4dc0-a07c-c792067b53df&quot;
-    },
-    {
-      &quot;first&quot;: {
-        &quot;##RUN_CONFIGURATION##&quot;: &quot;C/C++ File.main.cpp&quot;
-      },
-      &quot;second&quot;: &quot;9c5ef852-db80-4dc0-a07c-c792067b53df&quot;
-    }
-  ],
-  &quot;modificationCount&quot;: 18
-}</component>
+  <component name="SelectedDebugProfileService"><![CDATA[{
+  "profileIdByStamp": [],
+  "modificationCount": 22
+}]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2aafb15f-8729-4f5b-9846-7c228b19efe3" name="Changes" comment="" />
