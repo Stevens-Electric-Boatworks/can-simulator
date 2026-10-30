@@ -6,9 +6,8 @@
 
 namespace eboat
 {
-    class SimCanDevice
+    class CanIo
     {
 
     };
 }
-

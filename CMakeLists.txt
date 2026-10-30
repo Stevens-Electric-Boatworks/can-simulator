@@ -6,7 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(can_simulator
         src/main.cpp
-        src/can/SimCanDevice.h
+        include/can/generic/SimCanDevice.h
+        src/can/CanIo.cpp
 )
 # download CPM.cmake
 file(
@@ -27,3 +28,7 @@ target_link_libraries(
         sockcanpp
 )
 
+target_include_directories(${PROJECT_NAME}
+        PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+)
