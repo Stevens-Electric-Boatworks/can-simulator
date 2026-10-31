@@ -1,11 +1,14 @@
-# CANOpen Motor Controller Simulator
+# C++ CAN Bus Simulator
+
+>[!IMPORTANT]
+>The `main` and `v2` branches are based on a CANopen implementation which mimics the Inmotion ACS Gen 7 motor controllers. However, due to changing priorities, we will not be using a CANopen enabled device. Instead, work is now being done on a classic-can implementation instead. Furthermore, this new classic-can version will also simulate our custom CAN nodes using the EBoat CAN Protocol (EBP). Therefore, you should use the `classic-can` branch instead. 
 
 A tool for simulating realistic CAN bus activity from virtual motor controllers, built for [TidalCore](https://github.com/) development and testing.
 
 It lets you test a CANopen master (TidalCore) and control software without any physical hardware by running simulated CANopen slaves on a Linux virtual CAN interface (`vcan0`).
 
 > [!NOTE]
-> Most work is being done on the `v2` branch and its associated PR.
+> The most up-to-date version of the CANopen implementation is on the `v2` branch and its associated PR.
 
 ## How it works
 
