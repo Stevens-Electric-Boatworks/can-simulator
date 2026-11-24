@@ -23,7 +23,9 @@ void eboat::EBPSimDevice::init() {
     )));
 }
 
-void eboat::EBPSimDevice::tick() {
+void eboat::EBPSimDevice::tick()
+{
+    device_status.ms_since_heartbeat = static_cast<uint16_t>(_can_io.get_ms_since_last_heartbeat());
 }
 
 void eboat::EBPSimDevice::send_device_status_frame() const {

@@ -12,7 +12,7 @@ void eboat::device::ExampleDevice::init() {
         [this]() {
             send_temp_sensor_frame();
         },
-        std::chrono::milliseconds(100) // Device Status Frame ; 10hz
+        std::chrono::milliseconds(100) // Device Temp Frame ; 10hz
     )));
 
 }
