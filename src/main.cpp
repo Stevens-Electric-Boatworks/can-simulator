@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
     auto& scheduler = manager.init_scheduler();
     manager.register_device(std::make_unique<eboat::device::ExampleDevice>(0x10, BOARD_COOLING, eboat::EBPFirmwareVersion{0, 1, 1, 1}, scheduler, io));
     manager.start();
-    std::this_thread::sleep_for(std::chrono::seconds(30));
+    std::this_thread::sleep_for(std::chrono::seconds(120));
 
     // Stop the scheduler
     scheduler.stop();

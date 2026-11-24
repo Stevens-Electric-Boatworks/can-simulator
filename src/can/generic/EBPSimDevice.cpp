@@ -13,13 +13,13 @@ void eboat::EBPSimDevice::init() {
         [this]() {
             send_device_status_frame();
         },
-        std::chrono::milliseconds(250) // Device Status Frame
+        std::chrono::milliseconds(200) // Device Status Frame
     )));
     _scheduler.addTask(std::move(std::make_unique<RecurringTask>(
         [this]() {
             send_device_version_frame();
         },
-        std::chrono::seconds(5) // Device Status Frame
+        std::chrono::seconds(5) // Device Version Frame
     )));
 }
 
