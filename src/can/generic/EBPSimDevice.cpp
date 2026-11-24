@@ -32,6 +32,7 @@ void eboat::EBPSimDevice::send_device_status_frame() const {
     const auto frame = FrameWriter(0x01)
             .u8(device_status.device_state)
             .u8(device_status.board_type)
+            .u16(0) // seconds since boot
             .u16(device_status.ms_since_heartbeat)
             .finish();
     _can_io.sendMessage(can_id_, frame);
